@@ -18,7 +18,7 @@
 
                 <div class="text logo-text">
                     <span class="name">DoughPro</span>
-                    <span class="profession">Admin</span>
+                    <span class="profession">Staff</span>
                 </div>
             </div>
 
@@ -50,22 +50,8 @@
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-fork icon'></i>
-                            <span class="text nav-text">Recipes</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
                             <i class='bx bx-pie-chart-alt icon' ></i>
                             <span class="text nav-text">Logs</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-user icon'></i>
-                            <span class="text nav-text">Users</span>
                         </a>
                     </li>
 
