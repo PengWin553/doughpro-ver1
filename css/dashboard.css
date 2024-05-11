@@ -130,6 +130,12 @@ header .image-text .profession{
     display: block;
 }
 
+header .image-text .profession .user-name{
+    font-size: 12px;
+    /* margin-top: -2px; */
+    /* display: block; */
+}
+
 .sidebar header .image{
     display: flex;
     align-items: center;
