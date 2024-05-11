@@ -1,15 +1,3 @@
-<?php
-    include('connection.php');
-    session_start();
-
-    if (!isset($_SESSION["user_name"])) {
-        header("location:../index.php");
-    }
-
-    $user_name = $_SESSION["user_name"];
-    $user_id =  $_SESSION["user_id"];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +18,7 @@
 
                 <div class="text logo-text">
                     <span class="name">DoughPro</span>
-                    <span class="profession">Admin - <span class="user-name">  <?php echo $user_name ?> </span> </span>
+                    <span class="profession">Admin</span>
                 </div>
             </div>
 
@@ -86,7 +74,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="logout.php">
+                    <a href="#">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
