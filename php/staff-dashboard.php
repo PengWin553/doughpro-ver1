@@ -2,8 +2,10 @@
     include('connection.php');
     session_start();
 
-    if (!isset($_SESSION["user_name"])) {
+    // Check if the user is logged in and has the "Staff" role
+    if (!isset($_SESSION["user_name"]) || $_SESSION["user_role"] !== 'Staff') {
         header("location:../index.php");
+        exit();
     }
 
     $user_name = $_SESSION["user_name"];
@@ -30,7 +32,7 @@
 
                 <div class="text logo-text">
                     <span class="name">DoughPro</span>
-                    <span class="profession">Staff - <span class="user-name">  <?php echo $user_name ?> </span> </span>
+                    <span class="profession">Staff - <span class="user-name">  <?php echo htmlspecialchars($user_name); ?> </span> </span>
                 </div>
             </div>
 

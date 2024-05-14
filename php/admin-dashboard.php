@@ -1,13 +1,15 @@
 <?php
-    include('connection.php');
-    session_start();
+include('connection.php');
+session_start();
 
-    if (!isset($_SESSION["user_name"])) {
-        header("location:../index.php");
-    }
+// Check if the user is logged in and has the "Admin" role
+if (!isset($_SESSION["user_name"]) || $_SESSION["user_role"] !== 'Admin') {
+    header("location:../index.php");
+    exit();
+}
 
-    $user_name = $_SESSION["user_name"];
-    $user_id =  $_SESSION["user_id"];
+$user_name = $_SESSION["user_name"];
+$user_id = $_SESSION["user_id"];
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +27,12 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <i class='bx bx-baguette doughpro-icon' ></i>
+                    <i class='bx bx-baguette doughpro-icon'></i>
                 </span>
 
                 <div class="text logo-text">
                     <span class="name">DoughPro</span>
-                    <span class="profession">Admin - <span class="user-name">  <?php echo $user_name ?> </span> </span>
+                    <span class="profession">Admin - <span class="user-name">  <?php echo htmlspecialchars($user_name); ?> </span> </span>
                 </div>
             </div>
 
@@ -39,7 +41,6 @@
 
         <div class="menu-bar">
             <div class="menu">
-
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <input type="text" placeholder="Search...">
@@ -48,7 +49,7 @@
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-home-alt icon' ></i>
+                            <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Stocks</span>
                         </a>
                     </li>
@@ -62,32 +63,17 @@
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-fork icon'></i>
-                            <span class="text nav-text">Recipes</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <i class='bx bx-pie-chart-alt icon'></i>
                             <span class="text nav-text">Logs</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-user icon'></i>
-                            <span class="text nav-text">Users</span>
-                        </a>
-                    </li>
-
                 </ul>
             </div>
 
             <div class="bottom-content">
                 <li class="">
                     <a href="logout.php">
-                        <i class='bx bx-log-out icon' ></i>
+                        <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
                 </li>
@@ -98,15 +84,12 @@
                         <i class='bx bx-sun icon sun'></i>
                     </div>
                     <span class="mode-text text">Dark mode</span>
-
                     <div class="toggle-switch">
                         <span class="switch"></span>
                     </div>
                 </li>
-                
             </div>
         </div>
-
     </nav>
 
     <section class="home">
@@ -114,6 +97,5 @@
     </section>
 
     <script src="../js/admin-dashboard.js"></script>
-
 </body>
 </html>

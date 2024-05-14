@@ -3,8 +3,10 @@
 include('connection.php');
 session_start();
 
-if (!isset($_SESSION["user_name"])) {
+// Check if the user is logged in and has the "Admin" role
+if (!isset($_SESSION["user_name"]) || $_SESSION["user_role"] !== 'Admin') {
     header("location:../index.php");
+    exit();
 }
 
 $user_name = $_SESSION["user_name"];
