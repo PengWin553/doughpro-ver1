@@ -1,6 +1,6 @@
 function sendMail() {
     (function () {
-        emailjs.init("y5AFZ7mJn8V7XSsJa"); //Account Public Key
+        emailjs.init("y5AFZ7mJn8V7XSsJa"); // Account Public Key
     })();
 
     var params = {
@@ -12,10 +12,12 @@ function sendMail() {
     };
 
     var serviceID = "service_figrw0d"; // Email Service ID
-    var templateID = "template_apfpqqg"; //Email Template ID
+    var templateID = "template_apfpqqg"; // Email Template ID
 
     emailjs.send(serviceID, templateID, params)
         .then(res => {
-            alert("Email Sent Successfully.")
-        }).catch();
+            alert("Email Sent Successfully.");
+        }).catch(error => {
+            console.error("Failed to send email:", error);
+        });
 }

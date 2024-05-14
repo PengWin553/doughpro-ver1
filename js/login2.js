@@ -1,26 +1,25 @@
 // LOGIN
 $("#btn-login").click(function () {
-    // Save the data from the modal inside variables
     var gmail = $("#login-email").val();
     var password = $("#login-password").val();
   
-    if (gmail.trim().length > 0) {
+    if (gmail.trim().length > 0 && password.trim().length > 0) {
+        // Hash the password client-side (for demonstration purposes; typically done server-side)
+        var passwordHash = md5(password);
+
         $.ajax({
             url: "php/login2.php",
             method: "POST",
             data: {
                 user_email: gmail,
-                password_hash: password,
+                password_hash: passwordHash,
             },
             success: function (data) {
                 var result = JSON.parse(data);
                 if (result.res === "success") {
-
-                    console.log("Password is correct. Proceed with Email verification.");
                     var userName = result.user_name;
                     var userEmail = result.user_email;
 
-                    // Check with two-factor authentication
                     $.ajax({
                         url: "php/send-verification-code.php",
                         method: "POST",
@@ -32,23 +31,15 @@ $("#btn-login").click(function () {
                             var result = JSON.parse(data);
 
                             if(result.res === "success"){
-                                console.log('Successfully logged in.');
-                                var userRole = result.user_role; // Store user role in a variable
-    
-                                // Redirect based on user role
+                                var userRole = result.user_role;
                                 if (userRole === "Admin") {
-                                    window.location.href = 'php/admin-dashboard.php'; // Redirect to admin dashboard
+                                    window.location.href = 'php/admin-dashboard.php';
                                 } else if (userRole === "Staff") {
-                                    window.location.href = 'php/staff-dashboard.php'; // Redirect to staff dashboard
+                                    window.location.href = 'php/staff-dashboard.php';
                                 }
                             }
-
-                           
-
                         }
-                    })
-
-                   
+                    });
                 } else {
                     console.error('Login failed:', result.message);
                     alert("Login failed. Please check your credentials.");
@@ -60,6 +51,6 @@ $("#btn-login").click(function () {
             }
         });
     } else {
-        alert("Error: Please enter your email.");
+        alert("Error: Please enter your email and password.");
     }
 });
