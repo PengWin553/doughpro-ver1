@@ -27,7 +27,7 @@
     <?php include("staff-sidebar.php") ?>
 
     <section class="home">
-        <!-- <div class="text">Dashboard Sidebar</div> -->
+        <div class="text">Staff Dashboard</div>
     </section>
 
     <script src="../js/admin-dashboard.js"></script>

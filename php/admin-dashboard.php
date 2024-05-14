@@ -27,7 +27,7 @@ $user_id = $_SESSION["user_id"];
     <?php include('admin-sidebar.php'); ?>
 
     <section class="home">
-        <!-- <div class="text">Dashboard Sidebar</div> -->
+        <div class="text">Admin Dashboard</div>
     </section>
 
     <script src="../js/admin-dashboard.js"></script>
