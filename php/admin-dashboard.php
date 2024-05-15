@@ -19,6 +19,7 @@ $user_id = $_SESSION["user_id"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoughPro</title>
     <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/page-title-styles.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
 </head>
@@ -27,9 +28,11 @@ $user_id = $_SESSION["user_id"];
     <?php include('admin-sidebar.php'); ?>
 
     <section class="home">
-        <div class="text">Admin Dashboard</div>
+        <div class="page-title-container">
+            <div class="page-title-text">  <i class='bx bxs-dashboard icon page-title-icon'></i> <span>Admin Dashboard</span> </div>
+        </div>
     </section>
 
-    <script src="../js/admin-dashboard.js"></script>
+    <script src="../js/sidebar.js"></script>
 </body>
 </html>

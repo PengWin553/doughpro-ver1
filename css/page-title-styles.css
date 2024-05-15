@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Poppins', 'Arial', sans-serif;
+}
+
+.page-title-container{
+    /* background: pink; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home .page-title-container .page-title-text{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 15px 25px;
+    /* background: yellow; */
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-title-icon{
+    padding-right: 10px;
+    font-size: 30px;
+}

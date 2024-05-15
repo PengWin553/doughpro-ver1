@@ -30,7 +30,7 @@
         <div class="text">Staff Dashboard</div>
     </section>
 
-    <script src="../js/admin-dashboard.js"></script>
+    <script src="../js/sidebar.js"></script>
 
 </body>
 </html>
