@@ -7,15 +7,16 @@
   font-family: 'Nunito', 'Poppins', 'Arial', sans-serif;
 }
 
+/* CREATE BUTTON STYLES */
 .btn-create {
-    border: 2px solid #24b4fb;
-    background-color: #24b4fb;
+    /* border: 2px solid #24b4fb; */
+    border: none;
     border-radius: 0.9em;
     padding: 0.8em 1.2em 0.8em 1em;
     transition: all ease-in-out 0.2s;
     font-size: 16px;
-    margin-left: 3.8em;
-    margin-top: 1.6em;
+    margin-left: -60.5em;
+    /* margin-top: 1.6em; */
    }
    
    .btn-create span {
@@ -26,6 +27,29 @@
     font-weight: 600;
    }
    
-   .btn-create:hover {
-    background-color: #0071e2;
+   .btn-container{
+    /* background: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
    }
+
+/* CREATE BUTTON STYLES */
+
+.btn-create{
+  background-color: #238cc0;
+}
+.btn-create:hover{
+    background-color: #0071e2;
+}
+
+/* UPDATE BUTTON STYLESS */
+
+.btn-update-delete {
+  /* border: 2px solid #24b4fb; */
+  border: none;
+  border-radius: 0.9em;
+  padding: 0.3em 2em;
+  transition: all ease-in-out 0.2s;
+  font-size: 14px;
+ }
