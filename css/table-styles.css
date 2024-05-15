@@ -7,6 +7,15 @@
     font-family: 'Nunito', 'Poppins', 'Arial', sans-serif;
 }
 
+/* trials */
+.table-container {
+    overflow-y: auto; /* make the container scrollable */
+    height: 500px; /* give a fixed height to the container */
+    margin-top: 1.5em;
+}
+
+
+
 .content-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -15,6 +24,7 @@
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: -0.1em;
 }
 
 .content-table thead tr {
@@ -22,7 +32,10 @@
     color: #ffffff;
     text-align: left;
     font-weight: bold;
+    position: sticky;
+    top: 0; /* Stick the header to the top */
 }
+
 
 .content-table th,
 .content-table td {
@@ -32,6 +45,8 @@
 .content-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
+
+
 
 .content-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
@@ -44,6 +59,11 @@
 .content-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+.content-table tbody {
+    /* background: green; */
+    border-radius: 8px;
 }
 
 .table-container{

@@ -22,6 +22,8 @@ $user_id = $_SESSION["user_id"];
     <link rel="stylesheet" href="../css/button-styles.css" />
     <link rel="stylesheet" href="../css/table-styles.css" />
     <link rel="stylesheet" href="../css/page-title-styles.css" />
+    <link rel="stylesheet" href="../css/page-title-styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
 </head>
@@ -35,7 +37,7 @@ $user_id = $_SESSION["user_id"];
         </div>
 
         <div class="btn-container">
-            <button class="btn-crud btn-create">
+            <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#exampleModal1"> 
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -45,13 +47,34 @@ $user_id = $_SESSION["user_id"];
             </button>
         </div>
 
+        <!-- CREATE USER MODAL -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newCategoryForm"> 
+                        <label for="name">Username</label>
+                        <input type="text" name="name" id="categoryName" class="form-control">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSaveCategory">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <!-- Table -->
         <div class="table-container">
-            <div class="resultcontainer">
+            <div class="resultcontainer" > 
                 <table class="content-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th >ID</th>
                             <th>Role</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -59,6 +82,7 @@ $user_id = $_SESSION["user_id"];
                             <th style="text-align: center;">Actions</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <!-- Data will be dynamically inserted here by JavaScript -->
                     </tbody>
@@ -68,6 +92,7 @@ $user_id = $_SESSION["user_id"];
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/display-users.js"></script>
 </body>

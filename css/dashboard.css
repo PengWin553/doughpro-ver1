@@ -221,13 +221,14 @@ body.dark .sidebar li a:hover .text{
     color: var(--text-color);
 }
 
-.sidebar .menu-bar{
+.sidebar .menu-bar {
     height: calc(100% - 55px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+    overflow-y: scroll; /* Change 'hidden' to 'scroll' */
 }
+
 .menu-bar::-webkit-scrollbar{
     display: none;
 }
@@ -302,13 +303,8 @@ body.dark .switch::before{
     width: calc(100% - 250px);
     background-color: var(--body-color);
     transition: var(--tran-05);
+    overflow-x: hidden;
 }
-/* .home .text{
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--text-color);
-    padding: 12px 60px;
-} */
 
 .sidebar.close ~ .home{
     left: 78px;
@@ -317,4 +313,8 @@ body.dark .switch::before{
 }
 body.dark .home .text{
     color: var(--text-color);
+}
+
+.menu-links ol, ul {
+    padding: 0 !important;
 }
