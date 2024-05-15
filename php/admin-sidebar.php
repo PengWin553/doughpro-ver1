@@ -25,7 +25,7 @@
 
                 <li class="nav-link">
                     <a href="admin-dashboard.php">
-                        <i class='bx bx-home-alt icon'></i>
+                        <i class='bx bxs-dashboard icon'></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>

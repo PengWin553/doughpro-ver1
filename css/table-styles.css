@@ -79,3 +79,18 @@
     display: flex;
     justify-content: space-around;
 }
+
+/* Hide the scrollbar but keep it functional */
+.table-container::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar width */
+}
+
+/* Optional: Style the scrollbar track (background) */
+.table-container::-webkit-scrollbar-track {
+    background: transparent; /* Set the scrollbar track color */
+}
+
+/* Optional: Style the scrollbar thumb (handle) */
+.table-container::-webkit-scrollbar-thumb {
+    background: transparent; /* Set the scrollbar thumb color */
+}
