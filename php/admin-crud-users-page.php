@@ -50,7 +50,7 @@ $user_id = $_SESSION["user_id"];
                         <th>Name</th>
                         <th>Email</th>
                         <th>Last Login</th>
-                        <th>Actions</th>
+                        <th style="text-align: center;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,8 +61,8 @@ $user_id = $_SESSION["user_id"];
                         <td>arianatorswiftyfangurl@gmail.com</td>
                         <td>May 5, 2025 8:00AM</td>
                         <td class="actions-buttons-container">
-                            <button class="btn-update-delete">Edit</button>
-                            <button class="btn-update-delete">Delete</button>
+                            <button class="btn-update-delete btn-update">Edit</button>
+                            <button class="btn-update-delete btn-delete">Delete</button>
                         </td>
                     </tr>
                     <tr class="active-row">
@@ -71,7 +71,10 @@ $user_id = $_SESSION["user_id"];
                         <td>Yuu Koito</td>
                         <td>arianatorswiftyfangurl@gmail.com</td>
                         <td>May 5, 2025 8:00AM</td>
-                        <td class="actions-buttons-container"></td>
+                        <td class="actions-buttons-container">
+                            <button class="btn-update-delete btn-update">Edit</button>
+                            <button class="btn-update-delete btn-delete">Delete</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -79,7 +82,10 @@ $user_id = $_SESSION["user_id"];
                         <td>Yuu Koito</td>
                         <td>arianatorswiftyfangurl@gmail.com</td>
                         <td>May 5, 2025 8:00AM</td>
-                        <td class="actions-buttons-container"></td>
+                        <td class="actions-buttons-container">
+                            <button class="btn-update-delete btn-update">Edit</button>
+                            <button class="btn-update-delete btn-delete">Delete</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -87,7 +93,10 @@ $user_id = $_SESSION["user_id"];
                         <td>Yuu Koito</td>
                         <td>arianatorswiftyfangurl@gmail.com</td>
                         <td>May 5, 2025 8:00AM</td>
-                        <td class="actions-buttons-container"></td>
+                        <td class="actions-buttons-container">
+                            <button class="btn-update-delete btn-update">Edit</button>
+                            <button class="btn-update-delete btn-delete">Delete</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -95,7 +104,10 @@ $user_id = $_SESSION["user_id"];
                         <td>Yuu Koito</td>
                         <td>arianatorswiftyfangurl@gmail.com</td>
                         <td>May 5, 2025 8:00AM</td>
-                        <td class="actions-buttons-container"></td>
+                        <td class="actions-buttons-container">
+                            <button class="btn-update-delete btn-update">Edit</button>
+                            <button class="btn-update-delete btn-delete">Delete</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -103,7 +115,10 @@ $user_id = $_SESSION["user_id"];
                         <td>Yuu Koito</td>
                         <td>arianatorswiftyfangurl@gmail.com</td>
                         <td>May 5, 2025 8:00AM</td>
-                        <td class="actions-buttons-container"></td>
+                        <td class="actions-buttons-container">
+                            <button class="btn-update-delete btn-update">Edit</button>
+                            <button class="btn-update-delete btn-delete">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

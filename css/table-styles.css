@@ -50,12 +50,12 @@
     /* background: pink; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     /* margin-left: 3.8em; */
 }
 
 .actions-buttons-container{
-    background: yellow;
+    /* background: yellow; */
     display: flex;
     justify-content: space-around;
 }
