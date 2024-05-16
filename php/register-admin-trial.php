@@ -1,4 +1,3 @@
-@ -0,0 +1,69 @@
 <?php
 include('connection.php');
 session_start();
