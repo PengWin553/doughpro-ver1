@@ -16,10 +16,6 @@
 
     <div class="menu-bar">
         <div class="menu">
-            <li class="search-box">
-                <i class='bx bx-search icon'></i>
-                <input type="text" placeholder="Search...">
-            </li>
 
             <ul class="menu-links">
 
@@ -41,6 +37,13 @@
                     <a href="#">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Stocks</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="admin-crud-categories-page.php">
+                        <i class='bx bx-category-alt icon'></i>
+                        <span class="text nav-text">Categories</span>
                     </a>
                 </li>
 
@@ -79,7 +82,7 @@
                 </a>
             </li>
 
-            <li class="mode">
+            <!-- <li class="mode">
                 <div class="sun-moon">
                     <i class='bx bx-moon icon moon'></i>
                     <i class='bx bx-sun icon sun'></i>
@@ -88,7 +91,7 @@
                 <div class="toggle-switch">
                     <span class="switch"></span>
                 </div>
-            </li>
+            </li> -->
         </div>
     </div>
 </nav>
