@@ -29,7 +29,7 @@
                 $hashedPassword = $userSaltedPassword;
 
                 // Insert the new user's credentials into the database
-                $stmt = $connection->prepare("INSERT INTO users_table (user_role, user_name, user_email, password_hash, salt) VALUES (:role, :name, :email, :password, :salt)");
+                $stmt = $connection->prepare("INSERT INTO users_table (user_role, user_name, user_email, password_hash, salt, created_at, updated_at) VALUES (:role, :name, :email, :password, :salt, NOW(), NOW())");
                 $stmt->bindParam(':role', $user_role);
                 $stmt->bindParam(':name', $user_name);
                 $stmt->bindParam(':email', $user_email);

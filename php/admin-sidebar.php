@@ -31,11 +31,19 @@
                 </li>
 
                 <li class="nav-link">
+                    <a href="admin-crud-inventory-page.php">
+                        <i class='bx bxs-baguette icon'></i>
+                        <span class="text nav-text">Inventory</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Stocks</span>
                     </a>
                 </li>
+
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bxs-shopping-bag icon'></i>
