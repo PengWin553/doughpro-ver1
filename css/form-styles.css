@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
 * {
@@ -8,26 +7,26 @@
   font-family: 'Nunito', 'Poppins', 'Arial', sans-serif;
 }
 
-.login-form-container{
+.login-form-container_inp {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh; /* Set height to 100% of the viewport height */
-  ;
 }
 
-.logo_container{
+.logo_container_inp {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: -1em;
 }
 
-.bx-baguette{
+.bx-baguette {
   font-size: 75px;
   color: rgb(237, 179, 21);
 }
-.form_container {
+
+.form_container_inp {
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -37,12 +36,15 @@
   gap: 15px;
   padding: 50px 40px 20px 40px;
   background-color: #ffffff;
- box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 11px;
   font-family: "Inter", sans-serif;
 }
 
-.logo_container {
+.login_form_inp {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo_container_inp {
   box-sizing: border-box;
   width: 80px;
   height: 80px;
@@ -52,7 +54,7 @@
   border-radius: 11px;
 }
 
-.title_container {
+.title_container_inp {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,14 +62,14 @@
   gap: 10px;
 }
 
-.title {
+.title_inp {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
   color: #212121;
 }
 
-.subtitle {
+.subtitle_inp {
   font-size: 0.725rem;
   max-width: 80%;
   text-align: center;
@@ -76,7 +78,7 @@
   margin-bottom: 0.8em;
 }
 
-.input_container {
+.input_container_inp {
   width: 100%;
   height: fit-content;
   position: relative;
@@ -85,7 +87,7 @@
   gap: 5px;
 }
 
-.icon {
+.icon_inp {
   width: 20px;
   position: absolute;
   z-index: 99;
@@ -93,13 +95,13 @@
   bottom: 9px;
 }
 
-.input_label {
+.input_label_inp {
   font-size: 0.75rem;
   color: #8B8E98;
   font-weight: 600;
 }
 
-.input_field {
+.input_field_inp {
   width: auto;
   height: 40px;
   padding: 0 0 0 40px;
@@ -110,13 +112,13 @@
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
-.input_field:focus {
+.input_field_inp:focus {
   border: 1px solid transparent;
   box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }
 
-.sign-in_btn {
+.sign-in_btn_inp {
   width: 100%;
   height: 40px;
   border: 0;
@@ -128,11 +130,11 @@
   font-weight: 700;
 }
 
-.sign-in_btn:hover{
+.sign-in_btn_inp:hover {
   background: #8907f3;
 }
 
-.sign-in_ggl {
+.sign-in_ggl_inp {
   width: 100%;
   height: 40px;
   display: flex;
@@ -148,7 +150,7 @@
   cursor: pointer;
 }
 
-.sign-in_apl {
+.sign-in_apl_inp {
   width: 100%;
   height: 40px;
   display: flex;
@@ -164,7 +166,7 @@
   cursor: pointer;
 }
 
-.separator {
+.separator_inp {
   width: 100%;
   display: flex;
   align-items: center;
@@ -173,7 +175,7 @@
   color: #8B8E98;
 }
 
-.separator .line {
+.separator_inp .line_inp {
   display: block;
   width: 100%;
   height: 1px;
@@ -181,9 +183,8 @@
   background-color: #e8e8e8;
 }
 
-.note {
+.note_inp {
   font-size: 0.75rem;
   color: #8B8E98;
   text-decoration: underline;
 }
-

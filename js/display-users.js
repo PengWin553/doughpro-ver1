@@ -18,7 +18,7 @@ function loadData() {
                             <td>${item.user_email}</td>
                             <td>${item.last_login_date}</td>
                             <td class="actions-buttons-container">
-                                <button class="btn-update-delete btn-update" id="${item.user_id}">Edit</button>
+                                <button class="btn-update btn-update-delete" id="${item.user_id}" data-user-name="${item.user_name}" data-user-role="${item.user_role}" data-user-email="${item.user_email}">Edit</button>
                                 <button class="btn-update-delete btn-delete" id="${item.user_id}">Delete</button>
                             </td>
                         </tr>`;
@@ -40,3 +40,4 @@ function loadData() {
 $(document).ready(function() {
     loadData();
 });
+
