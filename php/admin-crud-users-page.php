@@ -129,7 +129,8 @@ $user_id = $_SESSION["user_id"];
                     <div class="modal-body">
                         <!-- UPDATE USER FORM -->
                         <form class="form_container_inp" style="width: 100%; padding: 0;" id="updateUserForm">
-                            <input type="text" id="update_user_id">
+                            <!-- id -->
+                            <input type="hidden" id="update_user_id">
                             <!-- username -->
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="username_field">Username</label>

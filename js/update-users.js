@@ -1,13 +1,13 @@
 // UPDATE USERS
 
-// populate the Update Users Modal with data
+// Populate the Update Users Modal with data
 $(document).on("click", ".btn-update", function() {
     var user_id = $(this).attr("id");
     var user_name = $(this).data("user-name");
     var user_role = $(this).data("user-role");
     var user_email = $(this).data("user-email");
 
-    // // Set values in the update modal
+    // Set values in the update modal
     $("#update_user_id").val(user_id);
     $("#update_username").val(user_name);
     $("#update_role").val(user_role);
@@ -16,28 +16,25 @@ $(document).on("click", ".btn-update", function() {
     $("#updateUserModal").modal("show");
 });
 
-// update the database
-$("#btnUpdateProduct").click(function() {
-    var productId = $("#updateProductId").val();
-    var productName = $("#updateProductName").val();
-    var productCategory = $("#updateProductCategory").val();
-    var productQuantity = $("#updateProductQuantity").val();
+// Update the database
+$("#btn-edit_user").click(function() {
+    console.log('The edit user button was pressed');
+    var userId = $("#update_user_id").val();
+    var userName = $("#update_username").val();
+    var userRole = $("#update_role").val();
+    var userEmail = $("#update_email").val();
 
     var formData = new FormData();
-    var picture = $("#updatePicture")[0].files[0];
 
     // Append form data
-    formData.append('id', productId);
-    formData.append('name', productName);
-    formData.append('category', productCategory);
-    formData.append('quantity', productQuantity);
+    formData.append('user_id', userId);
+    formData.append('user_name', userName);
+    formData.append('user_role', userRole);
+    formData.append('user_email', userEmail);
 
-    // Append picture
-    formData.append('picture', picture);
-
-    if (productName.length > 0 && productCategory.length > 0 && productQuantity.length > 0) {
+    if (userName.length > 0 && userRole.length > 0 && userEmail.length > 0) {
         $.ajax({
-            url: "products.update.php",
+            url: "admin-update-users.php",
             type: "POST",
             data: formData,
             contentType: false,
@@ -48,8 +45,8 @@ $("#btnUpdateProduct").click(function() {
                 location.reload();
             }
         }).fail(function(xhr, status, error) {
-            console.error("An error occurred while updating product:", error);
-            alert("An error occurred while updating product. Please try again later.");
+            console.error("An error occurred while updating user info:", error);
+            alert("An error occurred while updating user info. Please try again later.");
         });
     }
 });
