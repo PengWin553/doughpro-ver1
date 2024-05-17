@@ -40,7 +40,7 @@ $user_id = $_SESSION["user_id"];
         </div>
 
         <div class="btn-container">
-            <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#addStockModal">
+            <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#addInventoryModal">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -48,6 +48,127 @@ $user_id = $_SESSION["user_id"];
                     </svg> Add
                 </span>
             </button>
+        </div>
+
+        <!-- CREATE ITEM MODAL -->
+        <div class="modal fade" id="addInventoryModal" tabindex="-1" aria-labelledby="addInventoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addInventoryModalLabel">Add Inventory</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- CREATE Inventory FORM -->
+                        <form class="form_container_inp" style="width: 100%; padding: 0;" id="newInventoryForm">
+                            <!-- name -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="Inventoryname_field">Inventory Name</label>
+                                <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter item name" title="Inpit title" name="add_inventory_name" type="text" class="input_field_inp" id="add_inventory_name" autocomplete="off">
+                            </div>
+
+                            <!-- category -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="category_select">Category</label>
+                                <i class='bx bx-category icon icon_inp modal-form-icons'></i>
+                                <select name="category_select" id="add_category" class="input_field_inp">
+                                    <option value="" selected disabled>select category</option>
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+
+                            <!-- description -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="inventory_description_field">Description</label>
+                                <i class='bx bx-info-circle icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter description" title="Inpit title" name="add_inventory_description" type="text" class="input_field_inp" id="add_inventory_description" autocomplete="off">
+                            </div>
+
+                            <!-- price -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="inventory_price_field">Price</label>
+                                <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter price" title="Inpit title" name="add_inventory_price" type="number" class="input_field_inp" id="add_inventory_price" autocomplete="off">
+                            </div>
+
+                           <!-- min stock level -->
+                            <div class="input_container_inp">
+                                <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
+                                <label class="input_label_inp" for="min_stock_level_field">Mininum Stock</label>
+                                <input placeholder="enter mininum stock value" title="Input title" name="add_min_stock_level" type="text" class="input_field_inp" id="add_min_stock_level" autocomplete="off">
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button title="Save" type="submit" class="sign-in_btn_inp" id="btn-add_inventory">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPDATE ITEM MODAL -->
+        <div class="modal fade" id="updateInventoryModal" tabindex="-1" aria-labelledby="updateInventoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="updateInventoryModalLabel">Update Inventory</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form_container_inp" style="width: 100%; padding: 0;" id="updateInventoryForm">
+                            <!-- id -->
+                            <input name="update_inventory_id" type="hidden" id="update_inventory_id">
+                            <!-- name -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="Inventoryname_field">Inventory Name</label>
+                                <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter item name" title="Inpit title" name="update_inventory_name" type="text" class="input_field_inp" id="update_inventory_name" autocomplete="off">
+                            </div>
+
+                            <!-- category -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="update_inventory_category">Category</label>
+                                <i class='bx bx-category icon icon_inp modal-form-icons'></i>
+                                <select name="update_inventory_category" id="update_inventory_category" class="input_field_inp">
+                                    <option value="" selected disabled>select category</option>
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+
+                            <!-- description -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="inventory_description_field">Description</label>
+                                <i class='bx bx-info-circle icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter description" title="Inpit title" name="update_inventory_description" type="text" class="input_field_inp" id="update_inventory_description" autocomplete="off">
+                            </div>
+
+                            <!-- price -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="inventory_price_field">Price</label>
+                                <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
+                            </div>
+
+                           <!-- min stock level -->
+                            <div class="input_container_inp">
+                                <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
+                                <label class="input_label_inp" for="min_stock_level_field">Mininum Stock</label>
+                                <input placeholder="enter mininum stock value" title="Input title" name="update_min_stock_level" type="text" class="input_field_inp" id="update_min_stock_level" autocomplete="off">
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button title="Save" type="submit" class="sign-in_btn_inp" id="btn-update_inventory">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Table -->
@@ -77,13 +198,11 @@ $user_id = $_SESSION["user_id"];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sidebar.js"></script>
-
-    <!-- <script src="../js/display-users.js"></script>
-    <script src="../js/register-users.js"></script>
-    <script src="../js/update-users.js"></script>
-    <script src="../js/delete-users.js"></script> -->
-
     <script src="../js/display-inventory.js"></script>
+    <script src="../js/display-cats-in-modal.js"></script>
+    <script src="../js/add-inventory.js"></script>
+    <script src="../js/update-inventory.js"></script>
+    <script src="../js/delete-inventory.js"></script>
 
 </body>
 

@@ -19,53 +19,55 @@
 
             <ul class="menu-links">
 
-                <li class="nav-link">
+                <li class="nav-link" title="Dashboard">
                     <a href="admin-dashboard.php">
                         <i class='bx bxs-dashboard icon'></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="nav-link" title="Inventory">
                     <a href="admin-crud-inventory-page.php">
                         <i class='bx bxs-baguette icon'></i>
                         <span class="text nav-text">Inventory</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="nav-link" title="Stocks">
                     <a href="#">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Stocks</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="nav-link" title="Categories">
                     <a href="admin-crud-categories-page.php">
                         <i class='bx bx-category-alt icon'></i>
                         <span class="text nav-text">Categories</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="nav-link" title="To Order">
                     <a href="#">
                         <i class='bx bxs-shopping-bag icon'></i>
                         <span class="text nav-text">To Order</span>
                     </a>
                 </li>
-                <li class="nav-link">
+
+                <li class="nav-link" title="Recipes">
                     <a href="#">
                         <i class='bx bx-fork icon'></i>
                         <span class="text nav-text">Recipes</span>
                     </a>
                 </li>
-                <li class="nav-link">
+
+                <li class="nav-link" title="Logs">
                     <a href="#">
                         <i class='bx bx-pie-chart-alt icon'></i>
                         <span class="text nav-text">Logs</span>
                     </a>
                 </li>
-                <li class="nav-link">
+                <li class="nav-link" title="Users">
                     <a href="admin-crud-users-page.php">
                         <i class='bx bx-user icon'></i>
                         <span class="text nav-text">Users</span>
@@ -74,7 +76,7 @@
             </ul>
         </div>
 
-        <div class="bottom-content">
+        <div class="bottom-content" title="Logout">
             <li class="">
                 <a href="logout.php">
                     <i class='bx bx-log-out icon'></i>
