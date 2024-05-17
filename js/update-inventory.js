@@ -29,7 +29,6 @@ $(document).ready(function() {
 });
 
 
-
 // Populate the Update Modal with data
 $(document).on("click", ".btn-update-inventory", function() {
     // store em
@@ -43,7 +42,6 @@ $(document).on("click", ".btn-update-inventory", function() {
     // Set values in the update modal
     $("#update_inventory_id").val(invId);
     $("#update_inventory_name").val(invName);
-    $("#update_inventory_category").val(invCategory);
     $("#update_inventory_description").val(invDescription);
     $("#update_inventory_price").val(invPrice);
     $("#update_min_stock_level").val(invStock);
@@ -54,33 +52,43 @@ $(document).on("click", ".btn-update-inventory", function() {
     $("#updateInventoryModal").modal("show");
 });
 
-// // Update the database
-// $("#btn-update_category").click(function() {
-//     console.log('The edit category button was pressed');
-//     var categoryId = $("#update_category_id").val();
-//     var categoryName = $("#update_category").val();
+// Update the database
+$("#btn-update_inventory").click(function() {
+    console.log('The edit inventory button was pressed');
 
-//     var formData = new FormData();
+    // get the updated data from the form
+    var invId = $("#update_inventory_id").val();
+    var invName = $("#update_inventory_name").val();
+    var invCategory = $("#update_inventory_category").val();
+    var invDescription = $("#update_inventory_description").val();
+    var invPrice = $("#update_inventory_price").val();
+    var invStock = $("#update_min_stock_level").val();
 
-//     // Append form data
-//     formData.append('category_id', categoryId);
-//     formData.append('category_name', categoryName);
+    var formData = new FormData();
 
-//     if (categoryName.length > 0) {
-//         $.ajax({
-//             url: "admin-update-category.php",
-//             type: "POST",
-//             data: formData,
-//             contentType: false,
-//             processData: false,
-//         }).done(function(data) {
-//             let result = JSON.parse(data);
-//             if (result.res == "success") {
-//                 location.reload();
-//             }
-//         }).fail(function(xhr, status, error) {
-//             console.error("An error occurred while updating category info:", error);
-//             alert("An error occurred while updating category info. Please try again later.");
-//         });
-//     }
-// });
+    // Append form data
+    formData.append('inventory_id', invId);
+    formData.append('inventory_name', invName);
+    formData.append('inventory_category', invCategory);
+    formData.append('inventory_description', invDescription);
+    formData.append('inventory_price', invPrice);
+    formData.append('inventory_min_stock_level', invStock);
+
+    if (invName.length > 0) {
+        $.ajax({
+            url: "admin-update-inventory.php",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+        }).done(function(data) {
+            let result = JSON.parse(data);
+            if (result.res == "success") {
+                location.reload();
+            }
+        }).fail(function(xhr, status, error) {
+            console.error("An error occurred while updating inventory info:", error);
+            alert("An error occurred while updating inventory info. Please try again later.");
+        });
+    }
+});

@@ -55,7 +55,7 @@ $user_id = $_SESSION["user_id"];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="addInventoryModalLabel">Add Inventory</h1>
+                        <h1 class="modal-title fs-5" id="addInventoryModalLabel">Add Item</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -63,7 +63,7 @@ $user_id = $_SESSION["user_id"];
                         <form class="form_container_inp" style="width: 100%; padding: 0;" id="newInventoryForm">
                             <!-- name -->
                             <div class="input_container_inp">
-                                <label class="input_label_inp" for="Inventoryname_field">Inventory Name</label>
+                                <label class="input_label_inp" for="Inventoryname_field">Item Name</label>
                                 <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
                                 <input placeholder="enter item name" title="Inpit title" name="add_inventory_name" type="text" class="input_field_inp" id="add_inventory_name" autocomplete="off">
                             </div>
@@ -115,7 +115,7 @@ $user_id = $_SESSION["user_id"];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="updateInventoryModalLabel">Update Inventory</h1>
+                        <h1 class="modal-title fs-5" id="updateInventoryModalLabel">Update Item</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -124,7 +124,7 @@ $user_id = $_SESSION["user_id"];
                             <input name="update_inventory_id" type="hidden" id="update_inventory_id">
                             <!-- name -->
                             <div class="input_container_inp">
-                                <label class="input_label_inp" for="Inventoryname_field">Inventory Name</label>
+                                <label class="input_label_inp" for="update_inventory_name">Item Name</label>
                                 <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
                                 <input placeholder="enter item name" title="Inpit title" name="update_inventory_name" type="text" class="input_field_inp" id="update_inventory_name" autocomplete="off">
                             </div>
@@ -141,14 +141,14 @@ $user_id = $_SESSION["user_id"];
 
                             <!-- description -->
                             <div class="input_container_inp">
-                                <label class="input_label_inp" for="inventory_description_field">Description</label>
+                                <label class="input_label_inp" for="update_inventory_description">Description</label>
                                 <i class='bx bx-info-circle icon icon_inp modal-form-icons' ></i>
                                 <input placeholder="enter description" title="Inpit title" name="update_inventory_description" type="text" class="input_field_inp" id="update_inventory_description" autocomplete="off">
                             </div>
 
                             <!-- price -->
                             <div class="input_container_inp">
-                                <label class="input_label_inp" for="inventory_price_field">Price</label>
+                                <label class="input_label_inp" for="update_inventory_price">Price</label>
                                 <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
                                 <input placeholder="enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
                             </div>
@@ -156,7 +156,7 @@ $user_id = $_SESSION["user_id"];
                            <!-- min stock level -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
-                                <label class="input_label_inp" for="min_stock_level_field">Mininum Stock</label>
+                                <label class="input_label_inp" for="update_min_stock_level">Mininum Stock</label>
                                 <input placeholder="enter mininum stock value" title="Input title" name="update_min_stock_level" type="text" class="input_field_inp" id="update_min_stock_level" autocomplete="off">
                             </div>
                             
