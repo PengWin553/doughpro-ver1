@@ -34,8 +34,8 @@
                 </li>
 
                 <li class="nav-link" title="Stocks">
-                    <a href="#">
-                        <i class='bx bx-home-alt icon'></i>
+                    <a href="admin-crud-stocks-page.php">
+                        <i class='bx bxs-objects-vertical-bottom icon'></i>
                         <span class="text nav-text">Stocks</span>
                     </a>
                 </li>
