@@ -27,6 +27,11 @@ $user_id = $_SESSION["user_id"];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
+
+    <!-- jQuery and jQuery UI for autocomplete -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -39,7 +44,7 @@ $user_id = $_SESSION["user_id"];
         </div>
 
         <div class="btn-container">
-            <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#addInventoryModal">
+            <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#addStockModal">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -47,6 +52,58 @@ $user_id = $_SESSION["user_id"];
                     </svg> Add
                 </span>
             </button>
+        </div>
+
+        <!-- CREATE STOCK MODAL -->
+        <div class="modal fade" id="addStockModal" tabindex="-1" aria-labelledby="addStockModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addStockModalLabel">Add Item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- CREATE Stock FORM -->
+                        <form class="form_container_inp" style="width: 100%; padding: 0;" id="newStockForm">
+                            <!-- name -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="Stockname_field">Item Name</label>
+                                <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
+                                <select name="add_stock_name" id="add_stock_name" class="input_field_inp">
+                                    <option value="">select item</option>
+                                </select>
+                            </div>
+
+                            <!-- quantity -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="set_quantity">Quantity</label>
+                                <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter quantity" title="Inpit title" name="set_quantity" type="number" class="input_field_inp" id="set_quantity" autocomplete="off">
+                            </div>
+
+                            <!-- unit -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="set_unit">Unit</label>
+                                <i class='bx bxs-ruler icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter unit" title="Inpit title" name="set_unit" type="number" class="input_field_inp" id="set_unit" autocomplete="off">
+                            </div>
+
+                            <!-- expiry date -->
+                            <div class="input_container_inp">
+                            <label class="input_label_inp" for="set_expiry_date">Expiry Date</label>
+                                <i class='bx bxs-hourglass-bottom icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter expiry date" title="Inpit title" name="set_expiry_date" type="date" class="input_field_inp" id="set_expiry_date" autocomplete="off">
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button title="Save" type="submit" class="sign-in_btn_inp" id="btn-add_inventory">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Table -->
@@ -72,18 +129,9 @@ $user_id = $_SESSION["user_id"];
         </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sidebar.js"></script>
-    <!-- <script src="../js/display-inventory.js"></script>
-    <script src="../js/display-cats-in-modal.js"></script>
-    <script src="../js/add-inventory.js"></script>
-    <script src="../js/update-inventory.js"></script>
-    <script src="../js/delete-inventory.js"></script> -->
-
     <script src="../js/display-stocks.js"></script>
-
-
+    <script src="../js/display-inv-in-modal.js"></script>
 </body>
-
 </html>

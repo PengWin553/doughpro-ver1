@@ -1,4 +1,4 @@
-$("#btn-add_user").click(function(event) {
+$('#btn-add_user').click(function(event) {
     event.preventDefault(); // Prevent form from submitting normally
 
     // get the values from the form
@@ -7,24 +7,37 @@ $("#btn-add_user").click(function(event) {
     var userEmail = $("#add_email").val();
 
     if (userName.trim().length > 0 && userRole && userEmail.trim().length > 0) {
-        $.ajax({
-            url: "admin-register-users.php",
+        // Prepare the form data to be sent
+        var formData = new URLSearchParams();
+        formData.append('user_name', userName);
+        formData.append('user_role', userRole);
+        formData.append('user_email', userEmail);
+
+        fetch("admin-register-users.php", {
             method: "POST",
-            data: {
-                user_name: userName,
-                user_role: userRole,
-                user_email: userEmail,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function(data) {
-                var result = JSON.parse(data);
-                if (result.res === "success") {
-                    location.reload();
-                } else if (result.res === "exists") {
-                    alert(result.msg);
-                } else {
-                    alert(result.msg);
-                }
+            body: formData.toString()
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
+            return response.json();
+        })
+        .then(result => {
+            if (result.res === "success") {
+                location.reload();
+            } else if (result.res === "exists") {
+                alert(result.msg);
+            } else {
+                alert(result.msg);
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred while registering the user:", error);
+            alert("An error occurred while registering the user. Please try again later.");
         });
     } else {
         alert("Please fill out all fields.");

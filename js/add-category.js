@@ -1,24 +1,28 @@
-$("#btn-add_category").click(function(event) {
+$('#btn-add_category').click(function(event) {
     // get the values from the form
     var categoryName = $("#add_category").val();
 
     if (categoryName.trim().length > 0) {
-        $.ajax({
-            url: "admin-add-category.php",
+        fetch("admin-add-category.php", {
             method: "POST",
-            data: {
-                category_name: categoryName,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
             },
-            success: function(data) {
-                var result = JSON.parse(data);
-                if (result.res === "success") {
-                    location.reload();
-                } else if (result.res === "exists") {
-                    alert(result.msg);
-                } else {
-                    alert(result.msg);
-                }
+            body: new URLSearchParams({
+                category_name: categoryName,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.res === "success") {
+                location.reload();
+            } else if (data.res === "exists" || data.res === "error") {
+                alert(data.msg);
             }
+        })
+        .catch(error => {
+            console.error('Error occurred while adding category:', error);
+            alert("An error occurred. Please try again later.");
         });
     } else {
         alert("Please fill out all fields.");

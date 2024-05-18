@@ -1,5 +1,3 @@
-// UPDATE USERS
-
 // Populate the Update Users Modal with data
 $(document).on("click", ".btn-update", function() {
     var user_id = $(this).attr("id");
@@ -16,9 +14,10 @@ $(document).on("click", ".btn-update", function() {
     $("#updateUserModal").modal("show");
 });
 
-// Update the database
 $("#btn-edit_user").click(function() {
     console.log('The edit user button was pressed');
+
+    // Get the updated data from the form
     var userId = $("#update_user_id").val();
     var userName = $("#update_username").val();
     var userRole = $("#update_role").val();
@@ -33,18 +32,22 @@ $("#btn-edit_user").click(function() {
     formData.append('user_email', userEmail);
 
     if (userName.length > 0 && userRole.length > 0 && userEmail.length > 0) {
-        $.ajax({
-            url: "admin-update-users.php",
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-        }).done(function(data) {
-            let result = JSON.parse(data);
-            if (result.res == "success") {
+        fetch("admin-update-users.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(result => {
+            if (result.res === "success") {
                 location.reload();
             }
-        }).fail(function(xhr, status, error) {
+        })
+        .catch(error => {
             console.error("An error occurred while updating user info:", error);
             alert("An error occurred while updating user info. Please try again later.");
         });
