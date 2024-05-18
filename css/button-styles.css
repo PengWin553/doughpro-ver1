@@ -56,20 +56,20 @@
  }
 
  .btn-update{
-  background: #eda41d;
+  background: #f0af35;
   color: white;
   font-size: 16px;
  }
 
  .btn-update:hover{
-  background: #d18b09;
+  background: #e69e18;
  }
 
  .btn-delete{
-  background: rgb(239, 54, 54);
+  background: rgb(246, 79, 79);
   color: white;
  }
 
  .btn-delete:hover{
-  background: rgb(206, 38, 38);
+  background: rgb(235, 44, 44);
  }
