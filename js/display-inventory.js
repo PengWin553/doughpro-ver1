@@ -25,6 +25,7 @@ function loadData() {
                         <td>${item.inventory_description}</td>
                         <td>${item.inventory_price}</td>
                         <td>${item.min_stock_level}</td>
+                        <td>${item.unit}</td>
                         <td class="actions-buttons-container">
                             <button class="btn-update btn-update-delete btn-update-inventory" 
                                 id="${item.inventory_id}" 
@@ -33,7 +34,9 @@ function loadData() {
                                 data-category-name="${item.category_name}"
                                 data-inventory-description="${item.inventory_description}" 
                                 data-inventory-price="${item.inventory_price}" 
-                                data-min-stock-level="${item.min_stock_level}">Edit</button>
+                                data-min-stock-level="${item.min_stock_level}"
+                                data-inventory-unit="${item.unit}"
+                            >Edit</button>
                             <button class="btn-update-delete btn-delete btn-delete-inventory" id="${item.inventory_id}">Delete</button>
                         </td>
                     </tr>`;

@@ -48,16 +48,16 @@ $(document).on("click", ".btn-update-inventory", function() {
         var invDescription = $(this).data("inventory-description");
         var invPrice = $(this).data("inventory-price");
         var invStock = $(this).data("min-stock-level");
+        var invUnit = $(this).data("inventory-unit");
 
         // Set values in the update modal
         $("#update_inventory_id").val(invId);
         $("#update_inventory_name").val(invName);
+        $("#update_inventory_category").val(invCategory);
         $("#update_inventory_description").val(invDescription);
         $("#update_inventory_price").val(invPrice);
         $("#update_min_stock_level").val(invStock);
-
-        // Set the selected category option
-        $("#update_inventory_category").val(invCategory);
+        $("#update_unit").val(invUnit);
 
         // Show the modal
         $("#updateInventoryModal").modal("show");
@@ -65,7 +65,7 @@ $(document).on("click", ".btn-update-inventory", function() {
 
 // Update the database
 $("#btn-update_inventory").click(function() {
-    console.log('The edit inventory button was pressed');
+    console.log('The edit inventory button of the modal was pressed');
 
     // get the updated data from the form
     var invId = $("#update_inventory_id").val();
@@ -74,6 +74,7 @@ $("#btn-update_inventory").click(function() {
     var invDescription = $("#update_inventory_description").val();
     var invPrice = $("#update_inventory_price").val();
     var invStock = $("#update_min_stock_level").val();
+    var invUnit = $("#update_unit").val();
 
     var formData = new FormData();
 
@@ -84,6 +85,7 @@ $("#btn-update_inventory").click(function() {
     formData.append('inventory_description', invDescription);
     formData.append('inventory_price', invPrice);
     formData.append('inventory_min_stock_level', invStock);
+    formData.append('inventory_unit', invUnit);
 
     if (invName.length > 0) {
         fetch("admin-update-inventory.php", {
@@ -99,12 +101,17 @@ $("#btn-update_inventory").click(function() {
         .then(result => {
             if (result.res == "success") {
                 location.reload();
+            } else {
+                console.error("Error updating inventory: ", result.message);
+                alert("Error updating inventory: " + result.message);
             }
         })
         .catch(error => {
             console.error("An error occurred while updating inventory info:", error);
             alert("An error occurred while updating inventory info. Please try again later.");
         });
+    } else {
+        alert("Item name cannot be empty.");
     }
 });
 

@@ -8,15 +8,34 @@ if (isset($_POST['inventory_name'])) {
     $invDescription = $_POST['inventory_description'];
     $invPrice = $_POST['inventory_price'];
     $invStock = $_POST['inventory_stock'];
+    $invUnit = $_POST['inventory_unit'];
 
     try {
         // Insert the new inventory data into the database
-        $stmt = $connection->prepare("INSERT INTO inventory_table (inventory_name, inventory_description, inventory_category, inventory_price, min_stock_level, created_at, updated_at) VALUES (:invName, :invDescription, :invCategory, :invPrice, :invStock, NOW(), NOW())");
+        $stmt = $connection->prepare("INSERT INTO inventory_table (
+            inventory_name,
+            inventory_description,
+            inventory_category,
+            inventory_price, 
+            min_stock_level, 
+            unit, 
+            created_at, 
+            updated_at)
+        VALUES(
+            :invName, 
+            :invDescription, 
+            :invCategory, 
+            :invPrice, 
+            :invStock, 
+            :invUnit, 
+            NOW(), 
+            NOW())");
         $stmt->bindParam(':invName', $invName);
         $stmt->bindParam(':invDescription', $invDescription);
         $stmt->bindParam(':invCategory', $invCategory);
         $stmt->bindParam(':invPrice', $invPrice);
         $stmt->bindParam(':invStock', $invStock);
+        $stmt->bindParam(':invUnit', $invUnit);
         $stmt->execute();
         echo json_encode(['res' => 'success']);
     } catch(PDOException $e) {

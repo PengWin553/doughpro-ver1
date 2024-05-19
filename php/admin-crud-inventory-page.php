@@ -98,6 +98,13 @@ $user_id = $_SESSION["user_id"];
                                 <label class="input_label_inp" for="min_stock_level_field">Mininum Stock</label>
                                 <input placeholder="enter mininum stock value" title="Input title" name="add_min_stock_level" type="text" class="input_field_inp" id="add_min_stock_level" autocomplete="off">
                             </div>
+
+                            <!-- unit -->
+                            <div class="input_container_inp">
+                                <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
+                                <label class="input_label_inp" for="min_stock_level_field">Unit</label>
+                                <input placeholder="enter unit" title="Input title" name="add_inventory_unit" type="text" class="input_field_inp" id="add_inventory_unit" autocomplete="off">
+                            </div>
                             
                         </form>
                     </div>
@@ -153,6 +160,13 @@ $user_id = $_SESSION["user_id"];
                                 <input placeholder="enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
                             </div>
 
+                            <!-- unit -->
+                            <div class="input_container_inp">
+                                <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
+                                <label class="input_label_inp" for="update_unit">Unit</label>
+                                <input placeholder="enter new unit" title="Input title" name="update_unit" type="text" class="input_field_inp" id="update_unit" autocomplete="off">
+                            </div>
+
                            <!-- min stock level -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
@@ -183,6 +197,7 @@ $user_id = $_SESSION["user_id"];
                             <th>Description</th>
                             <th>Price</th>
                             <th>Min. Stock Level</th>
+                            <th>Unit</th>
                             <th style="text-align: center;">Actions</th>
                         </tr>
                     </thead>

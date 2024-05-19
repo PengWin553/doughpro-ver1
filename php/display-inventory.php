@@ -10,6 +10,7 @@ try {
             inventory_table.inventory_category, 
             inventory_table.inventory_price, 
             inventory_table.min_stock_level, 
+            inventory_table.unit, 
             category_table.category_name 
         FROM 
             inventory_table 

@@ -5,6 +5,7 @@ $('#btn-add_inventory').click(function(event){
     var description = $("#add_inventory_description").val();
     var price = $("#add_inventory_price").val();
     var stock = $("#add_min_stock_level").val();
+    var unit = $("#add_inventory_unit").val();
 
     if (inventoryName.trim().length > 0) {
         fetch("admin-add-inventory.php", {
@@ -18,6 +19,7 @@ $('#btn-add_inventory').click(function(event){
                 inventory_description: description,
                 inventory_price: price,
                 inventory_stock: stock,
+                inventory_unit: unit,
             }),
         })
         .then(response => response.json())
