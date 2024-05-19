@@ -8,7 +8,7 @@ if (isset($_POST['inventory_name'])) {
     $invDescription = $_POST['inventory_description'];
     $invPrice = $_POST['inventory_price'];
     $invStock = $_POST['inventory_stock'];
-    $invUnit = $_POST['inventory_unit'];
+    $invUnit = strtoupper($_POST['inventory_unit']);
 
     try {
         // Insert the new inventory data into the database
