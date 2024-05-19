@@ -22,14 +22,12 @@ function loadData() {
                         <td>${item.stock_id}</td>
                         <td>${item.inventory_name}</td>
                         <td>${item.quantity}</td>
-                        <td>${item.unit}</td>
                         <td>${item.expiry_date}</td>
                         <td class="actions-buttons-container">
                             <button class="btn-update btn-update-delete btn-update-stock" 
                                 id="${item.stock_id}" 
                                 data-inventory-name="${item.inventory_name}" 
                                 data-quantity="${item.quantity}" 
-                                data-unit="${item.unit}"
                                 data-expiry-date="${item.expiry_date}">Edit</button>
                             <button class="btn-update-delete btn-delete btn-delete-stock" id="${item.stock_id}">Delete</button>
                         </td>

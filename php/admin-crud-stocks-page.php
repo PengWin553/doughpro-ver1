@@ -115,7 +115,6 @@ $user_id = $_SESSION["user_id"];
                             <th>Stock ID</th>
                             <th>Item Name</th>
                             <th>Quantity</th>
-                            <th>Unit</th>
                             <th>Expiry Date</th>
                             <th style="text-align: center;">Actions</th>
                         </tr>

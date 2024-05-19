@@ -7,7 +7,6 @@ try {
             stocks_table.stock_id, 
             inventory_table.inventory_name, 
             stocks_table.quantity, 
-            stocks_table.unit, 
             stocks_table.expiry_date
         FROM 
             stocks_table
