@@ -81,13 +81,6 @@ $user_id = $_SESSION["user_id"];
                                 <input placeholder="enter quantity" title="Inpit title" name="set_quantity" type="number" class="input_field_inp" id="set_quantity" autocomplete="off">
                             </div>
 
-                            <!-- unit -->
-                            <div class="input_container_inp">
-                                <label class="input_label_inp" for="set_unit">Unit</label>
-                                <i class='bx bxs-ruler icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter unit" title="Inpit title" name="set_unit" type="number" class="input_field_inp" id="set_unit" autocomplete="off">
-                            </div>
-
                             <!-- expiry date -->
                             <div class="input_container_inp">
                             <label class="input_label_inp" for="set_expiry_date">Expiry Date</label>
