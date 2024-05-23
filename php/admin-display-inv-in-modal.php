@@ -2,13 +2,13 @@
 include('connection.php');
 
 try {
-    $query = "SELECT inventory_id, inventory_name FROM inventory_table ORDER BY inventory_name ASC";
-    $statement = $connection->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    echo json_encode(["res" => "success", "data" => $result]);
-} catch (PDOException $th) {
-    echo json_encode(['res' => 'error', 'message' => $th->getMessage()]);
+    // Fetch the inventory items
+    $stmt = $connection->prepare("SELECT inventory_id, inventory_name FROM inventory_table");
+    $stmt->execute();
+    $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo json_encode(['res' => 'success', 'inventory' => $inventory]);
+} catch(PDOException $e) {
+    echo json_encode(['res' => 'error', 'msg' => $e->getMessage()]);
 }
 ?>

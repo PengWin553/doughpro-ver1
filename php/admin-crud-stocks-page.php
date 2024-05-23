@@ -91,7 +91,7 @@ $user_id = $_SESSION["user_id"];
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button title="Save" type="submit" class="sign-in_btn_inp" id="btn-add_inventory">
+                        <button title="Save" type="submit" class="sign-in_btn_inp" id="btn-add_stock">
                             <span>Save</span>
                         </button>
                     </div>
@@ -125,5 +125,6 @@ $user_id = $_SESSION["user_id"];
     <script src="../js/sidebar.js"></script>
     <script src="../js/display-stocks.js"></script>
     <script src="../js/display-inv-in-modal.js"></script>
+    <script src="../js/add-stock.js"></script>
 </body>
 </html>
