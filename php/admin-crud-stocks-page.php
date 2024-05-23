@@ -98,7 +98,52 @@ $user_id = $_SESSION["user_id"];
                 </div>
             </div>
         </div>
-        
+
+        <!-- UPDATE STOCK MODAL -->
+        <div class="modal fade" id="updateStockModal" tabindex="-1" aria-labelledby="updateStockModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="updateStockModalLabel">Update Item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- UPDATE Stock FORM -->
+                        <form class="form_container_inp" style="width: 100%; padding: 0;" id="updateStockForm">
+                            <!-- name -->
+                            <input type="hidden" id="update_stock_id">
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="update_stock_name">Item Name</label>
+                                <i class='bx bx-tag-alt icon icon_inp modal-form-icons'></i>
+                                <select name="update_stock_name" id="update_stock_name" class="input_field_inp">
+                                    <option value="">select item</option>
+                                </select>
+                            </div>
+
+                            <!-- quantity -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="update_quantity">Quantity</label>
+                                <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons'></i>
+                                <input placeholder="enter quantity" title="Input title" name="update_quantity" type="number" class="input_field_inp" id="update_quantity" autocomplete="off">
+                            </div>
+
+                            <!-- expiry date -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="update_expiry_date">Expiry Date</label>
+                                <i class='bx bxs-hourglass-bottom icon icon_inp modal-form-icons'></i>
+                                <input placeholder="enter expiry date" title="Input title" name="update_expiry_date" type="date" class="input_field_inp" id="update_expiry_date" autocomplete="off">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button title="Save" type="submit" class="sign-in_btn_inp" id="btn-update_stock">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Table -->
         <div class="table-container">
             <div class="resultcontainer">
@@ -126,5 +171,6 @@ $user_id = $_SESSION["user_id"];
     <script src="../js/display-stocks.js"></script>
     <script src="../js/display-inv-in-modal.js"></script>
     <script src="../js/add-stock.js"></script>
+    <script src="../js/update-stock.js"></script>
 </body>
 </html>
