@@ -17,13 +17,17 @@ function loadData() {
             tableBody.innerHTML = ''; // Clear existing table data
             
             result.data.forEach(item => {
+                // Check if current_stock is less than min_stock_level
+                let rowClass = item.current_stock < item.min_stock_level ? 'low-stock' : '';
+
                 let tableRow = `
-                    <tr>
+                    <tr class="${rowClass}">
                         <td>${item.inventory_id}</td>
                         <td>${item.inventory_name}</td>
                         <td>${item.category_name}</td>
                         <td>${item.inventory_description}</td>
                         <td>${item.inventory_price}</td>
+                        <td>${item.current_stock}</td>
                         <td>${item.min_stock_level}</td>
                         <td>${item.unit}</td>
                         <td class="actions-buttons-container">

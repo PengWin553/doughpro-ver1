@@ -94,3 +94,7 @@
 .table-container::-webkit-scrollbar-thumb {
     background: transparent; /* Set the scrollbar thumb color */
 }
+
+.low-stock {
+    background-color: rgb(243, 145, 145);
+}

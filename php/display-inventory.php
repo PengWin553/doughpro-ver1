@@ -9,6 +9,7 @@ try {
             inventory_table.inventory_description, 
             inventory_table.inventory_category, 
             inventory_table.inventory_price, 
+            IFNULL(SUM(stocks_table.quantity), 0) AS current_stock, 
             inventory_table.min_stock_level, 
             inventory_table.unit, 
             category_table.category_name 
@@ -18,6 +19,19 @@ try {
             category_table 
         ON 
             inventory_table.inventory_category = category_table.category_id 
+        LEFT JOIN 
+            stocks_table 
+        ON 
+            inventory_table.inventory_id = stocks_table.inventory_id 
+        GROUP BY 
+            inventory_table.inventory_id,
+            inventory_table.inventory_name,
+            inventory_table.inventory_description,
+            inventory_table.inventory_category,
+            inventory_table.inventory_price,
+            inventory_table.min_stock_level,
+            inventory_table.unit,
+            category_table.category_name
         ORDER BY 
             inventory_table.inventory_id DESC";
     
@@ -30,4 +44,3 @@ try {
     echo json_encode(['res' => 'error', 'message' => $e->getMessage()]);
 }
 ?>
-

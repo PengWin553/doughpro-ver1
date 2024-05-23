@@ -196,6 +196,7 @@ $user_id = $_SESSION["user_id"];
                             <th>Category</th>
                             <th>Description</th>
                             <th>Price</th>
+                            <th>Current Stock</th>
                             <th>Min. Stock Level</th>
                             <th>Unit</th>
                             <th style="text-align: center;">Actions</th>
