@@ -59,40 +59,40 @@ document.addEventListener("DOMContentLoaded", function() {
     loadInventoryItems();
 });
 
-// // Update the stock in the database
-// $("#btn-update_stock").click(function() {
-//     var stockId = $("#update_stock_id").val();
-//     var stockName = $("#update_stock_name").val();
-//     var stockQuantity = $("#update_quantity").val();
-//     var stockExpiry = $("#update_expiry_date").val();
+// Update the stock in the database
+$("#btn-update_stock").click(function() {
+    var stockId = $("#update_stock_id").val();
+    var stockName = $("#update_stock_name").val();
+    var stockQuantity = $("#update_quantity").val();
+    var stockExpiry = $("#update_expiry_date").val();
 
-//     var formData = new FormData();
-//     formData.append('stock_id', stockId);
-//     formData.append('stock_name', stockName);
-//     formData.append('stock_quantity', stockQuantity);
-//     formData.append('stock_expiry', stockExpiry);
+    var formData = new FormData();
+    formData.append('stock_id', stockId);
+    formData.append('stock_name', stockName);
+    formData.append('stock_quantity', stockQuantity);
+    formData.append('stock_expiry', stockExpiry);
 
-//     if (stockName.length > 0 && stockQuantity > 0 && stockExpiry.length > 0) {
-//         fetch("admin-update-stock.php", {
-//             method: "POST",
-//             body: formData
-//         })
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok');
-//             }
-//             return response.json();
-//         })
-//         .then(result => {
-//             if (result.res == "success") {
-//                 location.reload();
-//             } else {
-//                 console.error("Error updating stock: ", result.msg);
-//             }
-//         })
-//         .catch(error => {
-//             console.error("An error occurred while updating stock info:", error);
-//             alert("An error occurred while updating stock info. Please try again later.");
-//         });
-//     }
-// });
+    if (stockName.length > 0 && stockQuantity > 0 && stockExpiry.length > 0) {
+        fetch("admin-update-stock.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(result => {
+            if (result.res == "success") {
+                location.reload();
+            } else {
+                console.error("Error updating stock: ", result.msg);
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred while updating stock info:", error);
+            alert("An error occurred while updating stock info. Please try again later.");
+        });
+    }
+});
