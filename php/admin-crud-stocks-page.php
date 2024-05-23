@@ -59,7 +59,7 @@ $user_id = $_SESSION["user_id"];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="addStockModalLabel">Add Item</h1>
+                        <h1 class="modal-title fs-5" id="addStockModalLabel">Add Stock</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -104,7 +104,7 @@ $user_id = $_SESSION["user_id"];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="updateStockModalLabel">Update Item</h1>
+                        <h1 class="modal-title fs-5" id="updateStockModalLabel">Update Stock</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
