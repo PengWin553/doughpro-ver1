@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2024 at 05:32 PM
+-- Generation Time: May 23, 2024 at 05:45 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `doughpro`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_current_stock` (IN `p_inventory_id` INT)   BEGIN
+    DECLARE total_stock INT;
+
+    -- Calculate the total stock for the given inventory_id
+    SELECT IFNULL(SUM(quantity), 0) INTO total_stock
+    FROM stocks_table
+    WHERE inventory_id = p_inventory_id;
+
+    -- Update the current_stock in the inventory_table
+    UPDATE inventory_table
+    SET current_stock = total_stock
+    WHERE inventory_id = p_inventory_id;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -67,9 +87,8 @@ CREATE TABLE `inventory_table` (
 --
 
 INSERT INTO `inventory_table` (`inventory_id`, `inventory_name`, `inventory_description`, `inventory_category`, `inventory_price`, `current_stock`, `min_stock_level`, `unit`, `created_at`, `updated_at`) VALUES
-(7, 'Flour', ' 1111', '8', 100, 0, 60, 'sack', '2024-05-17 05:29:23', '2024-05-23 15:09:56'),
-(8, 'Eggs', ' i am a chicken fetus', '8', 123, 0, 123, 'sack', '2024-05-17 05:30:04', '2024-05-23 15:09:59'),
-(39, 'Salt', 'it\'s salty', '8', 123, 0, 54354, 'KG', '2024-05-23 13:05:53', '2024-05-23 15:10:02');
+(7, 'Flour', ' 1111', '8', 100, 1000, 70, 'SACK', '2024-05-17 05:29:23', '2024-05-23 15:39:44'),
+(39, 'Salt', 'it\'s salty', '8', 123, 20, 80, 'KG', '2024-05-23 13:05:53', '2024-05-23 15:42:04');
 
 -- --------------------------------------------------------
 
@@ -91,10 +110,32 @@ CREATE TABLE `stocks_table` (
 --
 
 INSERT INTO `stocks_table` (`stock_id`, `inventory_id`, `quantity`, `expiry_date`, `created_at`, `updated_at`) VALUES
-(16, 8, 90, '2024-05-27', '2024-05-23 13:23:57', '2024-05-23 13:24:17'),
-(17, 7, 900, '2024-05-30', '2024-05-23 13:24:42', '2024-05-23 13:24:56'),
-(18, 7, 5, '2024-05-10', '2024-05-23 15:22:41', '2024-05-23 15:23:08'),
-(19, 8, 20, '2024-05-29', '2024-05-23 15:23:33', '2024-05-23 15:23:33');
+(20, 8, 90, '2024-05-14', '2024-05-23 15:36:12', '2024-05-23 15:36:12'),
+(21, 7, 1000, '2024-05-30', '2024-05-23 15:36:34', '2024-05-23 15:39:44'),
+(22, 39, 10, '2024-05-20', '2024-05-23 15:40:43', '2024-05-23 15:42:04'),
+(23, 39, 10, '2024-05-30', '2024-05-23 15:41:44', '2024-05-23 15:41:59');
+
+--
+-- Triggers `stocks_table`
+--
+DELIMITER $$
+CREATE TRIGGER `after_stocks_delete` AFTER DELETE ON `stocks_table` FOR EACH ROW BEGIN
+    CALL update_current_stock(OLD.inventory_id);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_stocks_insert` AFTER INSERT ON `stocks_table` FOR EACH ROW BEGIN
+    CALL update_current_stock(NEW.inventory_id);
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_stocks_update` AFTER UPDATE ON `stocks_table` FOR EACH ROW BEGIN
+    CALL update_current_stock(NEW.inventory_id);
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -175,7 +216,7 @@ ALTER TABLE `inventory_table`
 -- AUTO_INCREMENT for table `stocks_table`
 --
 ALTER TABLE `stocks_table`
-  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users_table`
