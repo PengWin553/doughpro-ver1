@@ -172,5 +172,6 @@ $user_id = $_SESSION["user_id"];
     <script src="../js/display-inv-in-modal.js"></script>
     <script src="../js/add-stock.js"></script>
     <script src="../js/update-stock.js"></script>
+    <script src="../js/delete-stock.js"></script>
 </body>
 </html>
