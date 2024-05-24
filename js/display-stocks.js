@@ -32,7 +32,12 @@ function loadData() {
                 let timeDiff = expiryDate - currentDate;
                 let dayDiff = timeDiff / (1000 * 3600 * 24); // Difference in days
 
-                let rowClass = dayDiff <= 20 ? 'expiring-soon' : '';
+                let rowClass = '';
+                if (dayDiff <= 20 && dayDiff >= 0) {
+                    rowClass = 'expiring-soon';
+                } else if (expiryDate < currentDate) {
+                    rowClass = 'already-expired';
+                }
 
                 let tableRow = `
                     <tr class="${rowClass}">

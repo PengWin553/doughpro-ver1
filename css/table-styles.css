@@ -100,5 +100,9 @@
 }
 
 .expiring-soon {
-    background-color: #c5a57c;
+    background-color: #eecda2;
+}
+
+.already-expired{
+    background-color: #a3a1a0;
 }
