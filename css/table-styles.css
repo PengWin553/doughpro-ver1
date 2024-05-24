@@ -98,3 +98,7 @@
 .low-stock {
     background-color: rgb(243, 145, 145);
 }
+
+.expiring-soon {
+    background-color: #c5a57c;
+}
