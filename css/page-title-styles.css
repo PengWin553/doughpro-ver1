@@ -11,6 +11,24 @@
     justify-content: flex-end;
 }
 
+.page-legend-container{
+    /* background: pink; */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4.5em;
+}
+
+.home .page-legend-container .page-title-text{
+    padding-right: 4em;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #535353;
+}
+
 .home .page-title-container .page-title-text{
     font-size: 24px;
     font-weight: 600;
@@ -26,4 +44,21 @@
 .page-title-icon{
     padding-right: 10px;
     font-size: 30px;
+}
+
+.page-legend-icon{
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.page-legend-icon-low-inv{
+    color: #f39191;
+}
+
+.page-legend-icon-expiring-stock{
+    color: #f0dec7
+}
+
+.page-legend-icon-expired-stock{
+    color: #c0c0bf;
 }

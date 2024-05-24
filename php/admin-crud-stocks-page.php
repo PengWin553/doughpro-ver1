@@ -164,6 +164,13 @@ $user_id = $_SESSION["user_id"];
                 </table>
             </div>
         </div>
+
+        <div class="page-legend-container">
+            <div class="page-legend-column">
+                <div class="page-title-text"> <i class='bx bxs-rectangle icon page-legend-icon page-legend-icon-expiring-stock'></i> <span>Expiring</span> </div>
+                <div class="page-title-text"> <i class='bx bxs-rectangle icon page-legend-icon page-legend-icon-expired-stock'></i> <span>Expired</span> </div>
+            </div>
+        </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

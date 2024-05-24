@@ -170,7 +170,12 @@ $user_id = $_SESSION["user_id"];
                 </table>
             </div>
         </div>
+
+        <div class="page-legend-container">
+            <div class="page-title-text"> <i class='bx bxs-rectangle icon page-legend-icon'></i> <span>Insufficient Stock</span> </div>
+        </div>
     </section>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

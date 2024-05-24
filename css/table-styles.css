@@ -96,13 +96,13 @@
 }
 
 .low-stock {
-    background-color: rgb(243, 145, 145);
+    background-color: #f39191;
 }
 
 .expiring-soon {
-    background-color: #eecda2;
+    background-color: #f0dec7;
 }
 
 .already-expired{
-    background-color: #a3a1a0;
+    background-color: #c0c0bf;
 }

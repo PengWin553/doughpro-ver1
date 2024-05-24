@@ -209,6 +209,10 @@ $user_id = $_SESSION["user_id"];
                 </table>
             </div>
         </div>
+
+        <div class="page-legend-container">
+            <div class="page-title-text"> <i class='bx bxs-rectangle icon page-legend-icon page-legend-icon-low-inv'></i> <span>Shortage</span> </div>
+        </div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
