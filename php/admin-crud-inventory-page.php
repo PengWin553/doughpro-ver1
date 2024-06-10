@@ -153,18 +153,18 @@ $user_id = $_SESSION["user_id"];
                                 <input placeholder="enter description" title="Inpit title" name="update_inventory_description" type="text" class="input_field_inp" id="update_inventory_description" autocomplete="off">
                             </div>
 
-                            <!-- price -->
-                            <div class="input_container_inp">
-                                <label class="input_label_inp" for="update_inventory_price">Price</label>
-                                <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
-                            </div>
-
                             <!-- unit -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
                                 <label class="input_label_inp" for="update_unit">Unit</label>
                                 <input placeholder="enter new unit" title="Input title" name="update_unit" type="text" class="input_field_inp" id="update_unit" autocomplete="off">
+                            </div>
+
+                            <!-- price -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="update_inventory_price">Price</label>
+                                <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
                             </div>
 
                            <!-- min stock level -->
@@ -195,10 +195,10 @@ $user_id = $_SESSION["user_id"];
                             <th>Name</th>
                             <th>Category</th>
                             <th>Description</th>
+                            <th>Unit</th>
                             <th>Price</th>
                             <th>Current Stock</th>
                             <th>Min. Stock Level</th>
-                            <th>Unit</th>
                             <th style="text-align: center;">Actions</th>
                         </tr>
                     </thead>

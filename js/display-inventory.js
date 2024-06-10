@@ -26,10 +26,10 @@ function loadData() {
                         <td>${item.inventory_name}</td>
                         <td>${item.category_name}</td>
                         <td>${item.inventory_description}</td>
+                        <td>${item.unit}</td>
                         <td>${item.inventory_price}</td>
                         <td>${item.current_stock}</td>
                         <td>${item.min_stock_level}</td>
-                        <td>${item.unit}</td>
                         <td class="actions-buttons-container">
                             <button class="btn-update btn-update-delete btn-update-inventory" 
                                 id="${item.inventory_id}" 
