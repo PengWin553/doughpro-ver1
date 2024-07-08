@@ -22,11 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($userInputPasswordHashedSalted === $storedPassword) {
                 // Password is correct
 
-                // Clear the previous session and start a new one
-                session_unset();
-                session_destroy();
-                session_start();
-
                 // SET SESSION GLOBAL VARIABLES
                 $_SESSION["user_id"] = $rowResult["user_id"];
                 $_SESSION["user_name"] = $rowResult["user_name"];

@@ -1,4 +1,6 @@
 $("#btn-login").click(function(event) {
+    event.preventDefault(); // Prevent default form submission
+
     var gmail = $("#login-email").val();
     var password = $("#login-password").val();
 
