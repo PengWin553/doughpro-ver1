@@ -17,24 +17,16 @@
             if (!$userExists) {
                 // Define a default password for the new user (this should ideally be changed by the user later)
                 $defaultPassword = 'doughProDefaultPass143'; // Choose a secure default password
-                $defaultPasswordHashed = md5($defaultPassword);
-
-                // Generate a unique salt for the new user
-                $userSalt = bin2hex(random_bytes(16)); // Generate a 16-byte (128-bit) random salt
-
-                // Combine the salt with the user's password
-                $userSaltedPassword = $defaultPasswordHashed . $userSalt;
-
-                // Use bcrypt to hash the salted password
-                $hashedPassword = $userSaltedPassword;
+                
+                // Use password_hash to hash the default password
+                $hashedPassword = password_hash($defaultPassword, PASSWORD_BCRYPT);
 
                 // Insert the new user's credentials into the database
-                $stmt = $connection->prepare("INSERT INTO users_table (user_role, user_name, user_email, password_hash, salt, created_at, updated_at) VALUES (:role, :name, :email, :password, :salt, NOW(), NOW())");
+                $stmt = $connection->prepare("INSERT INTO users_table (user_role, user_name, user_email, password_hash, created_at, updated_at) VALUES (:role, :name, :email, :password, NOW(), NOW())");
                 $stmt->bindParam(':role', $user_role);
                 $stmt->bindParam(':name', $user_name);
                 $stmt->bindParam(':email', $user_email);
                 $stmt->bindParam(':password', $hashedPassword);
-                $stmt->bindParam(':salt', $userSalt);
                 $stmt->execute();
 
                 echo json_encode(['res' => 'success']);

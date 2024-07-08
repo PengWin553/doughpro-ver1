@@ -13,7 +13,7 @@
     
     <main class="login-form-container_inp">
         <!-- LOGIN FORM -->
-        <form class="form_container_inp login-form_inp">
+        <form class="form_container_inp login-form_inp" id="loginForm">
             <div class="logo_container_inp">
                 <i class='bx bx-baguette doughpro-icon_inp'></i>
             </div>
