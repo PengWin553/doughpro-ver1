@@ -1,0 +1,18 @@
+.pagination-container button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #766ce6;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.pagination-container button.active {
+    background-color: #5648f1;
+}
+
+.pagination-container button:hover {
+    background-color: #3a2bd7;
+}

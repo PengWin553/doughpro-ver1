@@ -25,11 +25,11 @@ $user_id = $_SESSION["user_id"];
     <link rel="stylesheet" href="../css/table-styles.css" />
     <link rel="stylesheet" href="../css/page-title-styles.css" />
     <link rel="stylesheet" href="../css/page-title-styles.css" />
+    <link rel="stylesheet" href="../css/pagination-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
 </head>
-
 <body>
 
     <?php include('admin-sidebar.php'); ?>
@@ -171,9 +171,10 @@ $user_id = $_SESSION["user_id"];
             </div>
         </div>
 
-        <div class="page-legend-container">
-            <div class="page-title-text"> <i class='bx bxs-rectangle icon page-legend-icon'></i> <span>Insufficient Stock</span> </div>
+        <div class="pagination-container" style="text-align: center; margin-top: 20px;">
+            <!-- Pagination buttons will be dynamically inserted here by JavaScript -->
         </div>
+        
     </section>
     
 

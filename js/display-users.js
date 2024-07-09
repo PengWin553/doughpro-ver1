@@ -1,5 +1,5 @@
-function loadData() {
-    fetch("display-users.php", {
+function loadData(page = 1, limit = 7) {
+    fetch(`display-users.php?page=${page}&limit=${limit}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
@@ -35,6 +35,20 @@ function loadData() {
                     </tr>`;
                 tableBody.insertAdjacentHTML('beforeend', tableRow);
             });
+
+            // Add pagination controls
+            const paginationContainer = document.querySelector(".pagination-container");
+            paginationContainer.innerHTML = '';
+            const totalPages = Math.ceil(result.total / result.limit);
+            for (let i = 1; i <= totalPages; i++) {
+                const paginationButton = document.createElement("button");
+                paginationButton.innerText = i;
+                paginationButton.addEventListener("click", () => loadData(i, limit));
+                if (i === result.page) {
+                    paginationButton.classList.add("active");
+                }
+                paginationContainer.appendChild(paginationButton);
+            }
         } else {
             alert("Failed to load user data.");
         }
