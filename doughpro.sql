@@ -150,7 +150,6 @@ CREATE TABLE `users_table` (
   `user_email` varchar(100) NOT NULL,
   `password_hash` varchar(100) NOT NULL,
   `last_login_date` date NOT NULL,
-  `salt` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -159,14 +158,9 @@ CREATE TABLE `users_table` (
 -- Dumping data for table `users_table`
 --
 
-INSERT INTO `users_table` (`user_id`, `user_role`, `user_name`, `user_email`, `password_hash`, `last_login_date`, `salt`, `created_at`, `updated_at`) VALUES
-(28, 'Admin', 'Yuu Koito', 'arianatorswiftyfangurl@gmail.com', '8a925302d802e39251ea16b4e87dc662a058690f066ee7bc5b736140ab021135', '2024-05-23', 'a058690f066ee7bc5b736140ab021135', '2024-05-16 09:35:12', '2024-05-23 11:42:12'),
-(35, 'Staff', 'Staff Name', 'staff@example.com', 'e909cfcd6b7bf9d92cff781472e503c4ff8e496c1f41e5db8efe8b9ef09cb0d7', '2024-05-18', 'ff8e496c1f41e5db8efe8b9ef09cb0d7', '2024-05-16 09:35:12', '2024-05-18 06:19:57'),
-(36, 'Admin', 'Jham', 'jham@gmail.com', 'c4ebbb1455dab67a0bcf95e633ad44c28487b2df9331348de26fb267aa9c70ff', '2024-05-15', '8487b2df9331348de26fb267aa9c70ff', '2024-05-16 09:35:12', '2024-05-16 09:35:12'),
-(43, 'Staff', 'Rae Taylor', 'raetaylor@gmail.com', 'ed3a7ab919795f62d36f6658a0f703a9d33ca9256f4360f9b111f0e5d83ba00a', '2024-05-16', 'd33ca9256f4360f9b111f0e5d83ba00a', '2024-05-16 09:35:12', '2024-05-16 09:35:12'),
-(44, 'Admin', 'Claire Francois1', 'clairefrancois@gmail.com', 'ed3a7ab919795f62d36f6658a0f703a9220da88abd4ecc919554de105758a54b', '2024-05-16', '220da88abd4ecc919554de105758a54b', '2024-05-16 09:35:12', '2024-05-18 07:01:48'),
-(66, 'Staff', 'Kanno', 'kannokobayashi@gmail.com', 'ed3a7ab919795f62d36f6658a0f703a9a7c9f08d42337ec61214027b97715262', '0000-00-00', 'a7c9f08d42337ec61214027b97715262', '2024-05-18 08:14:04', '2024-05-18 08:35:24'),
-(67, 'Admin', 'Sushi Kobayashi 123', 'sushikobayashi@gmail.com', 'ed3a7ab919795f62d36f6658a0f703a9d0deb233c9802ff49eeacad85381f91c', '0000-00-00', 'd0deb233c9802ff49eeacad85381f91c', '2024-05-18 08:49:24', '2024-05-18 08:49:49');
+INSERT INTO `users_table` (`user_id`, `user_role`, `user_name`, `user_email`, `password_hash`, `last_login_date`, `created_at`, `updated_at`) VALUES
+(73, 'Admin', '1', '1@gmail.com', '$2y$10$l7RCPLfgTCvKWmkCZKP0OOrcef9w72CEgrEQ0PHEBmoFzwmJgFl1S', '2024-07-09', '2024-07-08 15:17:47', '2024-07-08 16:09:35'),
+(78, 'Staff', '2', '2@gmail.com', '$2y$10$CRtOF3eR1OkeBwuvj9QoCujuaAkTl9ZprquulIjZlXosYCVcSPMuu', '2024-07-09', '2024-07-08 16:09:52', '2024-07-08 16:10:19');
 
 --
 -- Indexes for dumped tables
