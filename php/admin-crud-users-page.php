@@ -26,15 +26,10 @@ $user_id = $_SESSION["user_id"];
     <link rel="stylesheet" href="../css/page-title-styles.css" />
     <link rel="stylesheet" href="../css/page-title-styles.css" />
     <link rel="stylesheet" href="../css/pagination-styles.css" />
+    <link rel="stylesheet" href="../css/search-and-filter-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
-    <style>
-        .search-filter{
-            margin: 10px;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -45,7 +40,7 @@ $user_id = $_SESSION["user_id"];
             <div class="page-title-text"> <i class='bx bx-user icon page-title-icon'></i> <span>Users</span> </div>
         </div>
 
-        <div class="btn-container">
+        <!-- <div class="btn-container">
             <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#addUserModal">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -54,7 +49,7 @@ $user_id = $_SESSION["user_id"];
                     </svg> Add
                 </span>
             </button>
-        </div>
+        </div> -->
 
         <!-- CREATE USER MODAL -->
         <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
@@ -156,17 +151,40 @@ $user_id = $_SESSION["user_id"];
         </div>
 
         <!-- Search and Filter -->
-        <div class="search-filter-container" style="display: flex; align-items: center; width: 100%; background: yellow; justify-content:center">
-            <input type="text" id="search-input" placeholder="Search by username" class="search-filter">
-            <select id="filter-select" class="search-filter">
-                <option value="">All Roles</option>
-                <option value="Admin">Admin</option>
-                <option value="Staff">Staff</option>
-            </select>
+        <div class="search-filter-container">
+
+            <!-- create btn -->
+            <button class="btn-crud btn-create" data-bs-toggle="modal" data-bs-target="#addUserModal" style="margin-left: -35rem;">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+                    </svg> Add
+                </span>
+            </button>
+
+            <!-- search -->
+            <div class="InputContainer search-input-container">
+                <input type="text" class="input" id="search-input" placeholder="Search by name">
+                
+                <label for="input" class="labelforsearch">
+                <svg viewBox="0 0 512 512" class="searchIcon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+                </label>
+            </div>
+
+            <!-- filter -->
+            <div class="InputContainer">
+                <select id="filter-select" class="input">
+                    <option value="">All Roles</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Staff">Staff</option>
+                </select>
+            </div>
+           
         </div>
 
         <!-- Table -->
-        <div class="table-container">
+        <div class="table-container" style="margin-top: 0.5rem;">
             <div class="resultcontainer">
                 <table class="content-table">
                     <thead>
@@ -190,10 +208,8 @@ $user_id = $_SESSION["user_id"];
         <div class="pagination-container" style="text-align: center; margin-top: 20px;">
             <!-- Pagination buttons will be dynamically inserted here by JavaScript -->
         </div>
-        
     </section>
     
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sidebar.js"></script>

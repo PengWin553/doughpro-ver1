@@ -10,7 +10,7 @@
 /* trials */
 .table-container {
     overflow-y: auto; /* make the container scrollable */
-    height: 500px; /* give a fixed height to the container */
+    height: 540px; /* give a fixed height to the container */
     margin-top: 1.5em;
 }
 

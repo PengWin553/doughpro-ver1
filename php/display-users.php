@@ -2,7 +2,7 @@
 include ('connection.php');
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 7;
+$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 8;
 $offset = ($page - 1) * $limit;
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';

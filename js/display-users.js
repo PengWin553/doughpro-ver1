@@ -1,4 +1,4 @@
-function loadData(page = 1, limit = 7, search = '', filter = '') {
+function loadData(page = 1, limit = 8, search = '', filter = '') {
     fetch(`display-users.php?page=${page}&limit=${limit}&search=${search}&filter=${filter}`, {
         method: "GET",
         headers: {
