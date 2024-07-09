@@ -29,6 +29,12 @@ $user_id = $_SESSION["user_id"];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
+    <style>
+        .search-filter{
+            margin: 10px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -147,6 +153,16 @@ $user_id = $_SESSION["user_id"];
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-filter-container" style="display: flex; align-items: center; width: 100%; background: yellow; justify-content:center">
+            <input type="text" id="search-input" placeholder="Search by username" class="search-filter">
+            <select id="filter-select" class="search-filter">
+                <option value="">All Roles</option>
+                <option value="Admin">Admin</option>
+                <option value="Staff">Staff</option>
+            </select>
         </div>
 
         <!-- Table -->

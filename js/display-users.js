@@ -1,5 +1,5 @@
-function loadData(page = 1, limit = 7) {
-    fetch(`display-users.php?page=${page}&limit=${limit}`, {
+function loadData(page = 1, limit = 7, search = '', filter = '') {
+    fetch(`display-users.php?page=${page}&limit=${limit}&search=${search}&filter=${filter}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ function loadData(page = 1, limit = 7) {
             for (let i = 1; i <= totalPages; i++) {
                 const paginationButton = document.createElement("button");
                 paginationButton.innerText = i;
-                paginationButton.addEventListener("click", () => loadData(i, limit));
+                paginationButton.addEventListener("click", () => loadData(i, limit, search, filter));
                 if (i === result.page) {
                     paginationButton.classList.add("active");
                 }
@@ -60,5 +60,18 @@ function loadData(page = 1, limit = 7) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Load initial data
     loadData();
+
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', function() {
+        loadData(1, 8, searchInput.value, filterSelect.value);
+    });
+
+    // Filter functionality
+    const filterSelect = document.getElementById('filter-select');
+    filterSelect.addEventListener('change', function() {
+        loadData(1, 8, searchInput.value, filterSelect.value);
+    });
 });
