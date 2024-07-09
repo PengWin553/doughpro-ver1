@@ -1,4 +1,7 @@
 $('#btn-add_inventory').click(function(event){
+    // Prevent the default form submission
+    event.preventDefault();
+    
     // get the values from the form
     var inventoryName = $("#add_inventory_name").val();
     var category = $("#add_category").val();
@@ -27,6 +30,7 @@ $('#btn-add_inventory').click(function(event){
             if (data.res === "success") {
                 location.reload();
             } else if (data.res === "exists" || data.res === "error") {
+                // Display error message
                 alert(data.msg);
             }
         })
@@ -38,4 +42,3 @@ $('#btn-add_inventory').click(function(event){
         alert("Please fill out all fields.");
     }
 });
-
