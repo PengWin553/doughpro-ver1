@@ -18,6 +18,11 @@
     background-color: #3a2bd7;
 }
 
+.pagination-container{
+    text-align: center; 
+    margin-top: 20px;
+}
+
  /* STYLES FOR CATEGORIES PAGE */
  .pagination-controls {
     display: flex;

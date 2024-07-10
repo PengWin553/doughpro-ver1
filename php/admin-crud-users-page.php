@@ -205,7 +205,7 @@ $user_id = $_SESSION["user_id"];
             </div>
         </div>
 
-        <div class="pagination-container" style="text-align: center; margin-top: 20px; background: green;">
+        <div class="pagination-container" style="">
             <!-- Pagination buttons will be dynamically inserted here by JavaScript -->
         </div>
     </section>
