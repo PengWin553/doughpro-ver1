@@ -1,11 +1,11 @@
 let currentPage = 1;
 const limit = 8;
 
-function loadData(page = 1) {
+function loadData(page = 1, search = '', filter = 'all') {
     currentPage = page;
 
     // Use fetch to retrieve data from the PHP endpoint
-    fetch(`admin-display-stocks.php?page=${page}&items_per_page=${limit}`)
+    fetch(`admin-display-stocks.php?page=${page}&items_per_page=${limit}&search=${search}&filter=${filter}`)
         .then(response => response.json())
         .then(result => {
             if (result.res === "success") {
@@ -70,14 +70,22 @@ function updatePaginationControls(page, total, limit) {
 
 function prevPage() {
     if (currentPage > 1) {
-        loadData(currentPage - 1);
+        loadData(currentPage - 1, document.getElementById('searchStockName').value, document.getElementById('filterExpiry').value);
     }
 }
 
 function nextPage() {
-    loadData(currentPage + 1);
+    loadData(currentPage + 1, document.getElementById('searchStockName').value, document.getElementById('filterExpiry').value);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     loadData();
+
+    document.getElementById('searchStockName').addEventListener('input', function() {
+        loadData(1, this.value, document.getElementById('filterExpiry').value);
+    });
+
+    document.getElementById('filterExpiry').addEventListener('change', function() {
+        loadData(1, document.getElementById('searchStockName').value, this.value);
+    });
 });

@@ -73,3 +73,7 @@
  .btn-delete:hover{
   background: rgb(235, 44, 44);
  }
+
+ .stocks-add-btn{
+  margin-left: -35rem;
+ }
