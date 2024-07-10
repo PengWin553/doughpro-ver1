@@ -1,11 +1,11 @@
 let currentPage = 1;
 const limit = 8;
 
-function loadData(page = 1) {
+function loadData(page = 1, searchQuery = '') {
     currentPage = page;
 
     // Use fetch to retrieve data from the PHP endpoint
-    fetch(`display-categories.php?page=${page}`)
+    fetch(`display-categories.php?page=${page}&search=${encodeURIComponent(searchQuery)}`)
         .then(response => response.json())
         .then(result => {
             if (result.res === "success") {
@@ -51,12 +51,19 @@ function updatePaginationControls(page, total, limit) {
 
 function prevPage() {
     if (currentPage > 1) {
-        loadData(currentPage - 1);
+        const searchQuery = document.getElementById('searchInput').value;
+        loadData(currentPage - 1, searchQuery);
     }
 }
 
 function nextPage() {
-    loadData(currentPage + 1);
+    const searchQuery = document.getElementById('searchInput').value;
+    loadData(currentPage + 1, searchQuery);
+}
+
+function liveSearch() {
+    const searchQuery = document.getElementById('searchInput').value;
+    loadData(1, searchQuery);
 }
 
 document.addEventListener("DOMContentLoaded", function() {

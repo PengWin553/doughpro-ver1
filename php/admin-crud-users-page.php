@@ -184,7 +184,7 @@ $user_id = $_SESSION["user_id"];
         </div>
 
         <!-- Table -->
-        <div class="table-container" style="margin-top: 0.5rem;">
+        <div class="table-container">
             <div class="resultcontainer">
                 <table class="content-table">
                     <thead>

@@ -11,7 +11,7 @@
 .table-container {
     overflow-y: auto; /* make the container scrollable */
     height: 540px; /* give a fixed height to the container */
-    margin-top: 1.5em;
+    margin-top: 0.5rem;
 }
 
 
