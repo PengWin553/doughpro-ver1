@@ -24,7 +24,7 @@ $user_id = $_SESSION["user_id"];
     <link rel="stylesheet" href="../css/button-styles.css" />
     <link rel="stylesheet" href="../css/table-styles.css" />
     <link rel="stylesheet" href="../css/page-title-styles.css" />
-    <link rel="stylesheet" href="../css/page-title-styles.css" />
+    <link rel="stylesheet" href="../css/pagination-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
@@ -208,6 +208,11 @@ $user_id = $_SESSION["user_id"];
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination-controls" class="pagination-controls">
+            <!-- The pagination will be displayed here using javascript -->
         </div>
 
         <div class="page-legend-container">
