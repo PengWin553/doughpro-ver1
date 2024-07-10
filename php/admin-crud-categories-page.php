@@ -28,6 +28,35 @@ $user_id = $_SESSION["user_id"];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../default-images/baguette-solid-24.png">
+    <style>
+        /* Add this to your CSS file */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    font-size: 16px;
+}
+
+    </style>
 </head>
 
 <body>
@@ -119,12 +148,17 @@ $user_id = $_SESSION["user_id"];
                             <th style="text-align: center;">Actions</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <!-- Data will be dynamically inserted here by JavaScript -->
                     </tbody>
                 </table>
+            
             </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div id="pagination-controls" class="pagination-controls" style="background: yellow; width: 100%; display: flex;">
+            <!-- Pagination buttons will be dynamically inserted here by JavaScript -->
         </div>
     </section>
 
