@@ -37,6 +37,8 @@ $("#btn-update_category").click(function() {
         .then(result => {
             if (result.res == "success") {
                 location.reload();
+            } else if (result.res == "exists" || result.res == "error") {
+                alert(result.msg);
             }
         })
         .catch(error => {

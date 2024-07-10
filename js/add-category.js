@@ -1,4 +1,6 @@
 $('#btn-add_category').click(function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
     // get the values from the form
     var categoryName = $("#add_category").val();
 
