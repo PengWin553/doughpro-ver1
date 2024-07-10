@@ -1,10 +1,28 @@
 let currentPage = 1;
 const limit = 8;
+let searchTerm = '';
+let categoryFilter = '';
+
+function loadCategories() {
+    fetch('get-categories.php')
+        .then(response => response.json())
+        .then(categories => {
+            const categoryFilterElement = document.getElementById('categoryFilter');
+            categoryFilterElement.innerHTML = '<option value="">All Categories</option>'; // Reset and add default option
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.category_id;
+                option.textContent = category.category_name;
+                categoryFilterElement.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error loading categories:', error));
+}
 
 function loadData(page = 1) {
     currentPage = page;
 
-    fetch(`display-inventory.php?page=${page}&items_per_page=${limit}`)
+    fetch(`display-inventory.php?page=${page}&items_per_page=${limit}&search=${searchTerm}&category=${categoryFilter}`)
         .then(response => response.json())
         .then(result => {
             if (result.res === "success") {
@@ -78,4 +96,20 @@ function nextPage() {
 
 document.addEventListener("DOMContentLoaded", function() {
     loadData();
+    loadCategories();
+
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilterElement = document.getElementById('categoryFilter');
+
+    searchInput.addEventListener('input', function() {
+        searchTerm = this.value;
+        currentPage = 1;
+        loadData();
+    });
+
+    categoryFilterElement.addEventListener('change', function() {
+        categoryFilter = this.value;
+        currentPage = 1;
+        loadData();
+    });
 });
