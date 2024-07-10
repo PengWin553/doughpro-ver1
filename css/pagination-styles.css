@@ -1,3 +1,4 @@
+/* STYLES FOR USERS PAGE */
 .pagination-container button {
     margin: 0 5px;
     padding: 5px 10px;
@@ -15,4 +16,36 @@
 
 .pagination-container button:hover {
     background-color: #3a2bd7;
+}
+
+ /* STYLES FOR CATEGORIES PAGE */
+ .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #6f65dd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* .pagination-controls button:hover {
+    background-color: #3a2bd7;
+    cursor: pointer;
+} */
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    font-size: 16px;
 }
