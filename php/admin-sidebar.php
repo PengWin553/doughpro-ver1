@@ -67,10 +67,18 @@
                         <span class="text nav-text">Logs</span>
                     </a>
                 </li>
+
                 <li class="nav-link" title="Users">
                     <a href="admin-crud-users-page.php">
                         <i class='bx bx-user icon'></i>
                         <span class="text nav-text">Users</span>
+                    </a>
+                </li>
+
+                <li class="nav-link" title="Users">
+                    <a href="admin-crud-suppliers-page.php">
+                        <i class='bx bx-group icon'></i>
+                        <span class="text nav-text">Suppliers</span>
                     </a>
                 </li>
             </ul>
