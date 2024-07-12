@@ -19,7 +19,7 @@ function loadData(page = 1, searchQuery = '') {
                             <td>${item.supplier_name}</td>
                             <td>${item.supply}</td>
                             <td class="actions-buttons-container">
-                                <button class="btn-update btn-update-delete btn-update-supplier" id="${item.supplier_id}" data-category-name="${item.supplier_name}">Edit</button>
+                                <button class="btn-update btn-update-delete btn-update-supplier" id="${item.supplier_id}" data-supplier-name="${item.supplier_name}" data-supply="${item.supply}">Edit</button>
                                 <button class="btn-update-delete btn-delete btn-delete-supplier" id="${item.supplier_id}">Delete</button>
                             </td>
                         </tr>`;

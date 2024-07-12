@@ -91,15 +91,15 @@ $user_id = $_SESSION["user_id"];
                             <!-- suppliername -->
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="updateSupplierName_field">Supplier Name</label>
-                                <i class='bx bx-supplier-alt icon icon_inp modal-form-icons' ></i>
+                                <i class='bx bx-user icon icon_inp modal-form-icons' ></i>
                                 <input placeholder="supplier name" title="Update supplier" name="update_supplier" type="text" class="input_field_inp" id="update_supplier" autocomplete="off">
                             </div>
 
                             <!-- supply -->
                             <div class="input_container_inp">
                             <label class="input_label_inp" for="updatesupplierName_field">Supply</label>
-                                <i class='bx bx-supplier-alt icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="supply" title="Update supplier" name="update_supplier" type="text" class="input_field_inp" id="update_supplier" autocomplete="off">
+                                <i class='bx bxs-baguette icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="supply" title="Update supplier" name="update_supply" type="text" class="input_field_inp" id="update_supply" autocomplete="off">
                             </div>
                         </form>
                     </div>
@@ -169,8 +169,8 @@ $user_id = $_SESSION["user_id"];
     <script src="../js/sidebar.js"></script>
     <script src="../js/display-suppliers.js"></script>
     <script src="../js/add-supplier.js"></script>
-    <!-- <script src="../js/update-supplier.js"></script>
-    <script src="../js/delete-supplier.js"></script> -->
+    <script src="../js/update-supplier.js"></script>
+    <!-- <script src="../js/delete-supplier.js"></script> -->
 
 </body>
 
