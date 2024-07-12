@@ -14,7 +14,7 @@ if (isset($_POST['supplier_name'])) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row['count'] > 0) {
-            echo json_encode(['res' => 'exists', 'msg' => 'Category name already exists.']);
+            echo json_encode(['res' => 'exists', 'msg' => 'Supplier name already exists.']);
         } else {
             // Insert the new supplier into the database
             $stmt = $connection->prepare("INSERT INTO suppliers_table (supplier_name, supply, created_at, updated_at) VALUES (:supplier_name, :supply, NOW(), NOW())");

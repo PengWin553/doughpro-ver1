@@ -41,6 +41,10 @@ $("#btn-update_supplier").click(function() {
         .then(result => {
             if (result.res === "success") {
                 location.reload();
+            } else if (result.res === "exists") {
+                alert(result.message);
+            } else {
+                alert("An error occurred while updating supplier info. Please try again later.");
             }
         })
         .catch(error => {
