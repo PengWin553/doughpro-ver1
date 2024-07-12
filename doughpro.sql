@@ -100,6 +100,7 @@ CREATE TABLE `stocks_table` (
   `stock_id` int(11) NOT NULL,
   `inventory_id` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
+  `remaining_quantity` int(11) NOT NULL,
   `expiry_date` date DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -180,6 +181,21 @@ CREATE TABLE `users_table` (
 INSERT INTO `users_table` (`user_id`, `user_role`, `user_name`, `user_email`, `password_hash`, `last_login_date`, `created_at`, `updated_at`) VALUES
 (73, 'Admin', '1', '1@gmail.com', '$2y$10$l7RCPLfgTCvKWmkCZKP0OOrcef9w72CEgrEQ0PHEBmoFzwmJgFl1S', '2024-07-09', '2024-07-08 15:17:47', '2024-07-08 16:09:35'),
 (78, 'Staff', '2', '2@gmail.com', '$2y$10$CRtOF3eR1OkeBwuvj9QoCujuaAkTl9ZprquulIjZlXosYCVcSPMuu', '2024-07-09', '2024-07-08 16:09:52', '2024-07-08 16:10:19');
+
+--
+-- Table structure for table `stocks_out_table`
+--
+
+CREATE TABLE `stocks_out_table` (
+  `stock_id` int(11) NOT NULL,
+  `inventory_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `remaining_quantity` int(11) NOT NULL,
+  `used` int(11) NOT NULL,
+  `spoiled` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables

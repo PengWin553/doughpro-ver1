@@ -30,8 +30,9 @@ function loadData(page = 1, search = '', filter = 'all') {
                         <tr class="${rowClass}">
                             <td>${item.stock_id}</td>
                             <td>${item.inventory_name}</td>
-                            <td>${item.quantity}</td>
                             <td>${item.expiry_date}</td>
+                            <td>${item.quantity}</td>
+                            <td>${item.remaining_quantity}</td>
                             <td class="actions-buttons-container">
                                 <button class="btn-update btn-update-delete btn-update-stock" 
                                     id="${item.stock_id}" 

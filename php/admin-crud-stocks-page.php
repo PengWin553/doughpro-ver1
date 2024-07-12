@@ -42,10 +42,8 @@ $user_id = $_SESSION["user_id"];
 
     <section class="home">
         <div class="page-title-container">
-            <div class="page-title-text"> <i class='bx bxs-objects-vertical-bottom icon page-title-icon'></i> <span>Stocks</span> </div>
+            <div class="page-title-text"> <i class='bx bxs-objects-vertical-bottom icon page-title-icon'></i> <span>Stocks In</span> </div>
         </div>
-
-        
 
         <!-- CREATE STOCK MODAL -->
         <div class="modal fade" id="addStockModal" tabindex="-1" aria-labelledby="addStockModalLabel" aria-hidden="true">
@@ -179,8 +177,9 @@ $user_id = $_SESSION["user_id"];
                         <tr>
                             <th>Stock ID</th>
                             <th>Item Name</th>
-                            <th>Quantity</th>
                             <th>Expiry Date</th>
+                            <th>Total Quantity</th>
+                            <th>Remaining Quantity</th>
                             <th style="text-align: center;">Actions</th>
                         </tr>
                     </thead>

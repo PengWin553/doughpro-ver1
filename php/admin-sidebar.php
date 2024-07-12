@@ -33,10 +33,17 @@
                     </a>
                 </li>
 
-                <li class="nav-link" title="Stocks">
+                <li class="nav-link" title="Stock In">
                     <a href="admin-crud-stocks-page.php">
                         <i class='bx bxs-objects-vertical-bottom icon'></i>
-                        <span class="text nav-text">Stocks</span>
+                        <span class="text nav-text">Stock In</span>
+                    </a>
+                </li>
+
+                <li class="nav-link" title="Stock Out">
+                    <a href="admin-stocks-out-page.php">
+                        <i class='bx bxs-objects-vertical-bottom icon'></i>
+                        <span class="text nav-text">Stock Out</span>
                     </a>
                 </li>
 
@@ -75,7 +82,7 @@
                     </a>
                 </li>
 
-                <li class="nav-link" title="Users">
+                <li class="nav-link" title="Suppliers">
                     <a href="admin-crud-suppliers-page.php">
                         <i class='bx bx-group icon'></i>
                         <span class="text nav-text">Suppliers</span>
