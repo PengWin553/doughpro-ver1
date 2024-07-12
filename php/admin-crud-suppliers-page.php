@@ -170,7 +170,7 @@ $user_id = $_SESSION["user_id"];
     <script src="../js/display-suppliers.js"></script>
     <script src="../js/add-supplier.js"></script>
     <script src="../js/update-supplier.js"></script>
-    <!-- <script src="../js/delete-supplier.js"></script> -->
+    <script src="../js/delete-supplier.js"></script>
 
 </body>
 
