@@ -140,6 +140,25 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `suppliers_table`
+--
+
+CREATE TABLE `suppliers_table` (
+  `supplier_id` int(11) NOT NULL,
+  `supplier_name` varchar(255) NOT NULL,
+  `supply` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `suppliers_table`
+--
+
+INSERT INTO `suppliers_table` (`supplier_id`, `supplier_name`, `supply`, `created_at`, `updated_at`) VALUES
+(1, 'Kanno', 'Fish', '2024-07-12 00:39:18', '2024-07-12 00:39:18');
+
+--
 -- Table structure for table `users_table`
 --
 
@@ -191,6 +210,12 @@ ALTER TABLE `users_table`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `suppliers_table`
+--
+ALTER TABLE `suppliers_table`
+  ADD PRIMARY KEY (`supplier_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -217,6 +242,13 @@ ALTER TABLE `stocks_table`
 --
 ALTER TABLE `users_table`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+COMMIT;
+
+--
+-- AUTO_INCREMENT for table `suppliers_table`
+--
+ALTER TABLE `suppliers_table`
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
