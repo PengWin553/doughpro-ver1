@@ -1,6 +1,23 @@
 <?php
 include('connection.php');
 
+// Function to update expired stocks
+function updateExpiredStocks($connection) {
+    $current_date = date('Y-m-d');
+    
+    $update_query = "
+        UPDATE stocks_out_table 
+        SET expired = remaining_quantity
+        WHERE expiry_date < :current_date AND remaining_quantity > 0 AND expired = 0";
+
+    $update_statement = $connection->prepare($update_query);
+    $update_statement->bindValue(':current_date', $current_date, PDO::PARAM_STR);
+    $update_statement->execute();
+}
+
+// Update expired stocks
+updateExpiredStocks($connection);
+
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $items_per_page = isset($_GET['items_per_page']) ? (int)$_GET['items_per_page'] : 8;
 $search = isset($_GET['search']) ? $_GET['search'] : '';
@@ -14,8 +31,8 @@ try {
 
     if ($filter === 'used') {
         $total_query .= " AND stocks_out_table.used > 0";
-    } elseif ($filter === 'spoiled') {
-        $total_query .= " AND stocks_out_table.spoiled > 0";
+    } elseif ($filter === 'expired') {
+        $total_query .= " AND stocks_out_table.expired > 0";
     }
 
     $total_statement = $connection->prepare($total_query);
@@ -31,7 +48,7 @@ try {
             stocks_out_table.quantity, 
             stocks_out_table.remaining_quantity,
             stocks_out_table.used,
-            stocks_out_table.spoiled,
+            stocks_out_table.expired,
             stocks_out_table.expiry_date,
             stocks_out_table.updated_at
         FROM 
@@ -45,8 +62,8 @@ try {
 
     if ($filter === 'used') {
         $query .= " AND stocks_out_table.used > 0";
-    } elseif ($filter === 'spoiled') {
-        $query .= " AND stocks_out_table.spoiled > 0";
+    } elseif ($filter === 'expired') {
+        $query .= " AND stocks_out_table.expired > 0";
     }
 
     $query .= " ORDER BY stocks_out_table.stock_id DESC LIMIT :limit OFFSET :offset";
@@ -66,6 +83,6 @@ try {
         "page" => $page
     ]);
 } catch (PDOException $e) {
-    echo json_encode(['res' => 'error', 'message' => $e->getMessage()]);
+    echo json_encode(["res" => "error", "message" => $e->getMessage()]);
 }
 ?>

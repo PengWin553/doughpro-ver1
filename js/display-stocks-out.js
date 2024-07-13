@@ -23,6 +23,12 @@ function loadData(page = 1, search = '', filter = 'all') {
                         rowClass = 'expiring-soon';
                     } else if (expiryDate < currentDate) {
                         rowClass = 'already-expired';
+
+                        // Automatically update the expired column if the item has expired
+                        if (item.remaining_quantity > 0 && item.expired === 0) {
+                            updateExpiredStock(item.stock_id, item.remaining_quantity);
+                            item.expired = item.remaining_quantity; // Set expired to remaining quantity
+                        }
                     }
 
                     let tableRow = `
@@ -32,7 +38,7 @@ function loadData(page = 1, search = '', filter = 'all') {
                             <td>${item.quantity}</td>
                             <td>${item.remaining_quantity}</td>
                             <td>${item.used}</td>
-                            <td>${item.spoiled}</td>
+                            <td>${item.expired}</td>
                             <td>${item.expiry_date}</td>
                             <td>${item.updated_at}</td>
                             <td class="actions-buttons-container">
@@ -52,6 +58,28 @@ function loadData(page = 1, search = '', filter = 'all') {
         .catch(error => {
             console.error("An error occurred while fetching stock data:", error);
         });
+}
+
+function updateExpiredStock(stockId, remainingQuantity) {
+    fetch('admin-update-expired-stock.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            stock_id: stockId,
+            remaining_quantity: remainingQuantity
+        })
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.res !== "success") {
+            console.error("Failed to update expired stock:", result.message);
+        }
+    })
+    .catch(error => {
+        console.error("An error occurred while updating expired stock:", error);
+    });
 }
 
 function updatePaginationControls(page, total, limit) {

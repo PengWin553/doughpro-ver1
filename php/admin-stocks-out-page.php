@@ -88,7 +88,7 @@ $user_id = $_SESSION["user_id"];
                 <select id="filterUsedSpoiled" class="input">
                     <option value="all">All</option>
                     <option value="used">Used</option>
-                    <option value="spoiled">Spoiled</option>
+                    <option value="expired">Expired</option>
                 </select>
             </div>
         </div>
