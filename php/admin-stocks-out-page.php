@@ -35,7 +35,6 @@ $user_id = $_SESSION["user_id"];
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
-
 <body>
 
     <?php include('admin-sidebar.php'); ?>
@@ -43,6 +42,34 @@ $user_id = $_SESSION["user_id"];
     <section class="home">
         <div class="page-title-container">
             <div class="page-title-text"> <i class='bx bxs-door-open icon page-title-icon'></i> <span>Stocks Out</span> </div>
+        </div>
+
+        <!-- Use Stock Modal -->
+        <div class="modal fade" id="useStockModal" tabindex="-1" aria-labelledby="useStockModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="useStockModalLabel">Use Stock</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form_container_inp" style="width: 100%; padding: 0;" id="useStockForm">
+                            <input type="hidden" id="useStockId">
+
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="useQuantity">Quantity Used</label>
+                                <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons'></i>
+                                <input placeholder="enter quantity" title="Input title" name="update_quantity" type="number" class="input_field_inp" id="useQuantity" autocomplete="off">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button title="Save" type="button" class="sign-in_btn_inp" id="confirmUseStock">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Search and Filter Section -->
@@ -98,5 +125,6 @@ $user_id = $_SESSION["user_id"];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/display-stocks-out.js"></script>
+    <script src="../js/use-stock.js"></script>
 </body>
 </html>
