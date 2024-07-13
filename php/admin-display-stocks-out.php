@@ -4,12 +4,19 @@ include('connection.php');
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $items_per_page = isset($_GET['items_per_page']) ? (int)$_GET['items_per_page'] : 8;
 $search = isset($_GET['search']) ? $_GET['search'] : '';
+$filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 $offset = ($page - 1) * $items_per_page;
 
 try {
     $total_query = "SELECT COUNT(*) as total FROM stocks_out_table
                     JOIN inventory_table ON stocks_out_table.inventory_id = inventory_table.inventory_id
                     WHERE inventory_table.inventory_name LIKE :search";
+
+    if ($filter === 'used') {
+        $total_query .= " AND stocks_out_table.used > 0";
+    } elseif ($filter === 'spoiled') {
+        $total_query .= " AND stocks_out_table.spoiled > 0";
+    }
 
     $total_statement = $connection->prepare($total_query);
     $total_statement->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
@@ -34,9 +41,15 @@ try {
         ON 
             stocks_out_table.inventory_id = inventory_table.inventory_id
         WHERE 
-            inventory_table.inventory_name LIKE :search
-        ORDER BY stocks_out_table.stock_id DESC 
-        LIMIT :limit OFFSET :offset";
+            inventory_table.inventory_name LIKE :search";
+
+    if ($filter === 'used') {
+        $query .= " AND stocks_out_table.used > 0";
+    } elseif ($filter === 'spoiled') {
+        $query .= " AND stocks_out_table.spoiled > 0";
+    }
+
+    $query .= " ORDER BY stocks_out_table.stock_id DESC LIMIT :limit OFFSET :offset";
 
     $statement = $connection->prepare($query);
     $statement->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);

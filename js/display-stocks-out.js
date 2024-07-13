@@ -1,19 +1,32 @@
 let currentPage = 1;
 const limit = 8;
 
-function loadData(page = 1, search = '') {
+function loadData(page = 1, search = '', filter = 'all') {
     currentPage = page;
 
-    fetch(`admin-display-stocks-out.php?page=${page}&items_per_page=${limit}&search=${search}`)
+    fetch(`admin-display-stocks-out.php?page=${page}&items_per_page=${limit}&search=${search}&filter=${filter}`)
         .then(response => response.json())
         .then(result => {
             if (result.res === "success") {
                 let tableBody = document.querySelector("table.content-table tbody");
                 tableBody.innerHTML = '';
 
+                let currentDate = new Date();
+
                 result.data.forEach(item => {
+                    let expiryDate = new Date(item.expiry_date);
+                    let timeDiff = expiryDate - currentDate;
+                    let dayDiff = timeDiff / (1000 * 3600 * 24); // Difference in days
+
+                    let rowClass = '';
+                    if (dayDiff <= 20 && dayDiff >= 0) {
+                        rowClass = 'expiring-soon';
+                    } else if (expiryDate < currentDate) {
+                        rowClass = 'already-expired';
+                    }
+
                     let tableRow = `
-                        <tr>
+                        <tr class="${rowClass}">
                             <td>${item.stock_id}</td>
                             <td>${item.inventory_name}</td>
                             <td>${item.quantity}</td>
@@ -56,18 +69,22 @@ function updatePaginationControls(page, total, limit) {
 
 function prevPage() {
     if (currentPage > 1) {
-        loadData(currentPage - 1, document.getElementById('searchStockName').value);
+        loadData(currentPage - 1, document.getElementById('searchStockOutName').value, document.getElementById('filterUsedSpoiled').value);
     }
 }
 
 function nextPage() {
-    loadData(currentPage + 1, document.getElementById('searchStockName').value);
+    loadData(currentPage + 1, document.getElementById('searchStockOutName').value, document.getElementById('filterUsedSpoiled').value);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     loadData();
 
-    document.getElementById('searchStockName').addEventListener('input', function() {
-        loadData(1, this.value);
+    document.getElementById('searchStockOutName').addEventListener('input', function() {
+        loadData(1, this.value, document.getElementById('filterUsedSpoiled').value);
+    });
+
+    document.getElementById('filterUsedSpoiled').addEventListener('change', function() {
+        loadData(1, document.getElementById('searchStockOutName').value, this.value);
     });
 });
