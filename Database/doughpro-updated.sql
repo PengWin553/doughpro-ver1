@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2024 at 05:29 AM
+-- Generation Time: Jul 13, 2024 at 07:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -65,7 +65,7 @@ CREATE TABLE `stocks_out_table` (
   `quantity` int(11) NOT NULL,
   `remaining_quantity` int(11) NOT NULL,
   `used` int(11) NOT NULL,
-  `spoiled` int(11) NOT NULL,
+  `expired` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `expiry_date` date DEFAULT NULL
@@ -99,7 +99,7 @@ $$
 DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `after_stock_insert` AFTER INSERT ON `stocks_table` FOR EACH ROW BEGIN
-    INSERT INTO stocks_out_table (stock_id, inventory_id, quantity, remaining_quantity, used, spoiled, expiry_date)
+    INSERT INTO stocks_out_table (stock_id, inventory_id, quantity, remaining_quantity, used, expired, expiry_date)
     VALUES (NEW.stock_id, NEW.inventory_id, NEW.quantity, NEW.quantity, 0, 0, NEW.expiry_date);
 END
 $$
