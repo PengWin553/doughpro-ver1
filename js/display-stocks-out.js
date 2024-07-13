@@ -1,11 +1,10 @@
 let currentPage = 1;
 const limit = 8;
 
-function loadStockOutData(page = 1, search = '', filter = 'all') {
+function loadData(page = 1, search = '') {
     currentPage = page;
 
-    // Use fetch to retrieve data from the PHP endpoint
-    fetch(`admin-display-stocks-out.php?page=${page}&items_per_page=${limit}&search=${search}&filter=${filter}`)
+    fetch(`admin-display-stocks-out.php?page=${page}&items_per_page=${limit}&search=${search}`)
         .then(response => response.json())
         .then(result => {
             if (result.res === "success") {
@@ -21,18 +20,24 @@ function loadStockOutData(page = 1, search = '', filter = 'all') {
                             <td>${item.remaining_quantity}</td>
                             <td>${item.used}</td>
                             <td>${item.spoiled}</td>
+                            <td>${item.expiry_date}</td>
+                            <td>${item.updated_at}</td>
+                            <td class="actions-buttons-container">
+                                <button class="btn-update btn-update-delete btn-use-stock" id="${item.stock_id}">
+                                    Use Stock
+                                </button>
+                            </td>
                         </tr>`;
                     tableBody.insertAdjacentHTML('beforeend', tableRow);
                 });
 
-                // Update pagination controls
                 updatePaginationControls(result.page, result.total, result.limit);
             } else {
-                console.error("Failed to load stock out data:", result.message);
+                console.error("Failed to load stock data:", result.message);
             }
         })
         .catch(error => {
-            console.error("An error occurred while fetching stock out data:", error);
+            console.error("An error occurred while fetching stock data:", error);
         });
 }
 
@@ -41,32 +46,28 @@ function updatePaginationControls(page, total, limit) {
     const totalPages = Math.ceil(total / limit);
 
     let paginationHTML = `
-        <button onclick="prevStockOutPage()" ${page === 1 ? 'disabled' : ''}>Previous</button>
+        <button onclick="prevPage()" ${page === 1 ? 'disabled' : ''}>Previous</button>
         <span>Page ${page} of ${totalPages}</span>
-        <button onclick="nextStockOutPage()" ${page === totalPages ? 'disabled' : ''}>Next</button>
+        <button onclick="nextPage()" ${page === totalPages ? 'disabled' : ''}>Next</button>
     `;
 
     paginationControls.innerHTML = paginationHTML;
 }
 
-function prevStockOutPage() {
+function prevPage() {
     if (currentPage > 1) {
-        loadStockOutData(currentPage - 1);
+        loadData(currentPage - 1, document.getElementById('searchStockName').value);
     }
 }
 
-function nextStockOutPage() {
-    loadStockOutData(currentPage + 1);
+function nextPage() {
+    loadData(currentPage + 1, document.getElementById('searchStockName').value);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    loadStockOutData();
+    loadData();
 
-    document.getElementById('searchStockOutName').addEventListener('input', function() {
-        loadStockOutData(1, this.value, document.getElementById('filterUsedSpoiled').value);
-    });
-
-    document.getElementById('filterUsedSpoiled').addEventListener('change', function() {
-        loadStockOutData(1, document.getElementById('searchStockOutName').value, this.value);
+    document.getElementById('searchStockName').addEventListener('input', function() {
+        loadData(1, this.value);
     });
 });

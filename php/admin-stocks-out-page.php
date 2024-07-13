@@ -42,7 +42,7 @@ $user_id = $_SESSION["user_id"];
 
     <section class="home">
         <div class="page-title-container">
-            <div class="page-title-text"> <i class='bx bxs-objects-vertical-bottom icon page-title-icon'></i> <span>Stocks Out</span> </div>
+            <div class="page-title-text"> <i class='bx bxs-door-open icon page-title-icon'></i> <span>Stocks Out</span> </div>
         </div>
 
         <!-- Search and Filter Section -->
@@ -67,19 +67,23 @@ $user_id = $_SESSION["user_id"];
         </div>
 
         <!-- Table -->
-        <div class="table-container">
+         <div class="table-container">
             <div class="resultcontainer">
                 <table class="content-table">
                     <thead>
                         <tr>
                             <th>Stock ID</th>
                             <th>Item Name</th>
-                            <th>Quantity</th>
+                            <th>Total Quantity</th>
                             <th>Remaining Quantity</th>
                             <th>Used</th>
                             <th>Spoiled</th>
+                            <th>Expiry Date</th>
+                            <th>Last Updated</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <!-- Data will be dynamically inserted here by JavaScript -->
                     </tbody>

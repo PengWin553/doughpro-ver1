@@ -42,7 +42,7 @@
 
                 <li class="nav-link" title="Stock Out">
                     <a href="admin-stocks-out-page.php">
-                        <i class='bx bxs-objects-vertical-bottom icon'></i>
+                        <i class='bx bxs-door-open icon'></i>
                         <span class="text nav-text">Stock Out</span>
                     </a>
                 </li>
