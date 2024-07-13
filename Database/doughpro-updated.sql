@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2024 at 03:22 AM
+-- Generation Time: Jul 13, 2024 at 05:29 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -81,6 +81,7 @@ CREATE TABLE `stocks_table` (
   `stock_id` int(11) NOT NULL,
   `inventory_id` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
+  `remaining_quantity` int(11) NOT NULL,
   `expiry_date` date DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -109,7 +110,7 @@ CREATE TRIGGER `after_stock_update` AFTER UPDATE ON `stocks_table` FOR EACH ROW 
     SET 
         inventory_id = NEW.inventory_id,
         quantity = NEW.quantity,
-        remaining_quantity = NEW.quantity,
+        remaining_quantity = NEW.remaining_quantity,
         expiry_date = NEW.expiry_date
     WHERE stock_id = NEW.stock_id;
 END
