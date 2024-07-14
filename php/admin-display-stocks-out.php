@@ -49,6 +49,7 @@ try {
             stocks_out_table.remaining_quantity,
             stocks_out_table.used,
             stocks_out_table.expired,
+            stocks_out_table.discarded,
             stocks_out_table.expiry_date,
             stocks_out_table.updated_at
         FROM 

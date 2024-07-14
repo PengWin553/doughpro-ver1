@@ -81,3 +81,22 @@
 .inventory-add-btn{
   margin-left: -40rem;
  }
+
+ .btn-none {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.btn-none:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-discard-stock{
+  background-color: hsl(0, 73%, 65%)
+}
+
+.btn-discard-stock:hover{
+  background-color: hsl(0, 48%, 54%)
+
+}

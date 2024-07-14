@@ -72,6 +72,34 @@ $user_id = $_SESSION["user_id"];
             </div>
         </div>
 
+        <!-- Discard Stock Modal -->
+        <div class="modal fade" id="discardStockModal" tabindex="-1" aria-labelledby="discardStockModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="discardStockModalLabel">Discard Stock</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form_container_inp" style="width: 100%; padding: 0;" id="discardStockForm">
+                            <input type="hidden" id="discardStockId">
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="discardQuantity">Quantity to Discard</label>
+                                <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons'></i>
+                                <input placeholder="enter quantity" title="Input title" name="discard_quantity" type="number" class="input_field_inp" id="discardQuantity" autocomplete="off" readonly>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button title="Save" type="button" class="sign-in_btn_inp" id="confirmDiscardStock">
+                            <span>Discard</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Search and Filter Section -->
         <div class="search-filter-container">
             <!-- search -->
@@ -105,6 +133,7 @@ $user_id = $_SESSION["user_id"];
                             <th>Remaining Quantity</th>
                             <th>Used</th>
                             <th>Spoiled</th>
+                            <th>Discarded</th>
                             <th>Expiry Date</th>
                             <th>Last Updated</th>
                             <th>Action</th>

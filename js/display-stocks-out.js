@@ -31,6 +31,17 @@ function loadData(page = 1, search = '', filter = 'all') {
                         }
                     }
 
+                    let actionButton;
+                    if (item.expired > 0) {
+                        if (item.remaining_quantity > 0) {
+                            actionButton = `<button class="btn-update btn-update-delete btn-discard-stock" id="${item.stock_id}" data-remaining="${item.remaining_quantity}">Discard Stock</button>`;
+                        } else {
+                            actionButton = `<button class="btn-update btn-update-delete btn-none" disabled>None</button>`;
+                        }
+                    } else {
+                        actionButton = `<button class="btn-update btn-update-delete btn-use-stock" id="${item.stock_id}">Use Stock</button>`;
+                    }
+
                     let tableRow = `
                         <tr class="${rowClass}">
                             <td>${item.stock_id}</td>
@@ -39,12 +50,11 @@ function loadData(page = 1, search = '', filter = 'all') {
                             <td>${item.remaining_quantity}</td>
                             <td>${item.used}</td>
                             <td>${item.expired}</td>
+                            <td>${item.discarded}</td>
                             <td>${item.expiry_date}</td>
                             <td>${item.updated_at}</td>
                             <td class="actions-buttons-container">
-                                <button class="btn-update btn-update-delete btn-use-stock" id="${item.stock_id}">
-                                    Use Stock
-                                </button>
+                                ${actionButton}
                             </td>
                         </tr>`;
                     tableBody.insertAdjacentHTML('beforeend', tableRow);
@@ -115,4 +125,56 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('filterUsedSpoiled').addEventListener('change', function() {
         loadData(1, document.getElementById('searchStockOutName').value, this.value);
     });
+
+    // Add event listener for Discard Stock button
+    document.querySelector('table.content-table tbody').addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('btn-discard-stock')) {
+            const stockId = e.target.id;
+            const remainingQuantity = e.target.getAttribute('data-remaining');
+            openDiscardModal(stockId, remainingQuantity);
+        }
+    });
+
+    // Add event listener for Confirm Discard button
+    document.getElementById('confirmDiscardStock').addEventListener('click', function() {
+        const stockId = document.getElementById('discardStockId').value;
+        const quantity = document.getElementById('discardQuantity').value;
+        discardStock(stockId, quantity);
+    });
+
+    // Add event listener for modal close button
+    document.querySelector('#discardStockModal .btn-close').addEventListener('click', function() {
+        const discardModal = bootstrap.Modal.getInstance(document.getElementById('discardStockModal'));
+        discardModal.hide();
+    });
 });
+
+function openDiscardModal(stockId, remainingQuantity) {
+    document.getElementById('discardStockId').value = stockId;
+    document.getElementById('discardQuantity').value = remainingQuantity;
+    new bootstrap.Modal(document.getElementById('discardStockModal')).show();
+}
+
+function discardStock(stockId, quantity) {
+    fetch('admin-discard-stock.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `stock_id=${stockId}&quantity=${quantity}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.res === 'success') {
+            const discardModal = bootstrap.Modal.getInstance(document.getElementById('discardStockModal'));
+            discardModal.hide();
+            loadData(currentPage, document.getElementById('searchStockOutName').value, document.getElementById('filterUsedSpoiled').value);
+        } else {
+            alert('Error: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+}
