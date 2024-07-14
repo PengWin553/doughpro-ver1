@@ -12,11 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stockQuantity = $_POST['stock_quantity'];
     $stockExpiry = $_POST['stock_expiry'];
 
+    $remainingStock = $stockQuantity;
+
     try {
         // Prepare the UPDATE query to update the stock information in the database
         $query = "UPDATE stocks_table
             SET inventory_id = :name,
                 quantity = :quantity,
+                remaining_quantity = :remaining_quantity,
                 expiry_date = :expiry
             WHERE stock_id = :id";
         $statement = $connection->prepare($query);
@@ -24,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statement->bindParam(':id', $stockId);
         $statement->bindParam(':name', $stockName);
         $statement->bindParam(':quantity', $stockQuantity);
+        $statement->bindParam(':remaining_quantity', $remainingStock);
         $statement->bindParam(':expiry', $stockExpiry);
         // Execute the query
         $statement->execute();
