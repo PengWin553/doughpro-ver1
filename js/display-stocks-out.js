@@ -39,7 +39,11 @@ function loadData(page = 1, search = '', filter = 'all') {
                             actionButton = `<button class="btn-update btn-update-delete btn-none" disabled>None</button>`;
                         }
                     } else {
-                        actionButton = `<button class="btn-update btn-update-delete btn-use-stock" id="${item.stock_id}">Use Stock</button>`;
+                        if (item.remaining_quantity == 0){
+                            actionButton = `<button class="btn-update btn-update-delete btn-none" disabled>None</button>`;
+                        }else{
+                            actionButton = `<button class="btn-update btn-update-delete btn-use-stock" id="${item.stock_id}">Use Stock</button>`;
+                        }
                     }
 
                     let tableRow = `
