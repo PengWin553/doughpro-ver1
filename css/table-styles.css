@@ -106,3 +106,7 @@
 .already-expired{
     background-color: #c0c0bf;
 }
+
+.default-row{
+    background-color: white;
+}

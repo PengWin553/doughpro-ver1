@@ -19,7 +19,9 @@ function loadData(page = 1, search = '', filter = 'all') {
                     let dayDiff = timeDiff / (1000 * 3600 * 24); // Difference in days
 
                     let rowClass = '';
-                    if (dayDiff <= 20 && dayDiff >= 0) {
+                    if (item.remaining_quantity == 0) {
+                        rowClass = 'default-row';
+                    } else if (dayDiff <= 20 && dayDiff >= 0) {
                         rowClass = 'expiring-soon';
                     } else if (expiryDate < currentDate) {
                         rowClass = 'already-expired';
