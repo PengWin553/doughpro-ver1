@@ -26,6 +26,13 @@
                     </a>
                 </li>
 
+                <li class="nav-link" title="Categories">
+                    <a href="admin-crud-categories-page.php">
+                        <i class='bx bx-category-alt icon'></i>
+                        <span class="text nav-text">Categories</span>
+                    </a>
+                </li>
+
                 <li class="nav-link" title="Inventory">
                     <a href="admin-crud-inventory-page.php">
                         <i class='bx bxs-baguette icon'></i>
@@ -47,13 +54,6 @@
                     </a>
                 </li>
 
-                <li class="nav-link" title="Categories">
-                    <a href="admin-crud-categories-page.php">
-                        <i class='bx bx-category-alt icon'></i>
-                        <span class="text nav-text">Categories</span>
-                    </a>
-                </li>
-
                 <li class="nav-link" title="To Order">
                     <a href="#">
                         <i class='bx bxs-shopping-bag icon'></i>
@@ -65,6 +65,13 @@
                     <a href="#">
                         <i class='bx bx-fork icon'></i>
                         <span class="text nav-text">Recipes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link" title="Suppliers">
+                    <a href="admin-crud-suppliers-page.php">
+                        <i class='bx bx-group icon'></i>
+                        <span class="text nav-text">Suppliers</span>
                     </a>
                 </li>
 
@@ -81,13 +88,7 @@
                         <span class="text nav-text">Users</span>
                     </a>
                 </li>
-
-                <li class="nav-link" title="Suppliers">
-                    <a href="admin-crud-suppliers-page.php">
-                        <i class='bx bx-group icon'></i>
-                        <span class="text nav-text">Suppliers</span>
-                    </a>
-                </li>
+               
             </ul>
         </div>
 
@@ -98,17 +99,6 @@
                     <span class="text nav-text">Logout</span>
                 </a>
             </li>
-
-            <!-- <li class="mode">
-                <div class="sun-moon">
-                    <i class='bx bx-moon icon moon'></i>
-                    <i class='bx bx-sun icon sun'></i>
-                </div>
-                <span class="mode-text text">Dark mode</span>
-                <div class="toggle-switch">
-                    <span class="switch"></span>
-                </div>
-            </li> -->
         </div>
     </div>
 </nav>
