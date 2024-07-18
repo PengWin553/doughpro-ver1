@@ -54,6 +54,13 @@
                     </a>
                 </li>
 
+                <li class="nav-link" title="Product In">
+                    <a href="admin-crud-products-page.php">
+                        <i class='bx bxs-store icon'></i>
+                        <span class="text nav-text">Product In</span>
+                    </a>
+                </li>
+
                 <li class="nav-link" title="To Order">
                     <a href="#">
                         <i class='bx bxs-shopping-bag icon'></i>
