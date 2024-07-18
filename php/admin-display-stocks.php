@@ -1,6 +1,8 @@
 <?php
 include('connection.php');
 
+header('Content-Type: application/json');
+
 // Get the current page number, items per page, search term, and filter type from the request
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $items_per_page = isset($_GET['items_per_page']) ? (int)$_GET['items_per_page'] : 8;

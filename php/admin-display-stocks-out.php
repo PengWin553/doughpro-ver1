@@ -1,6 +1,8 @@
 <?php
 include('connection.php');
 
+header('Content-Type: application/json');
+
 // Function to update expired stocks
 function updateExpiredStocks($connection) {
     $current_date = date('Y-m-d');
@@ -83,6 +85,7 @@ try {
         "limit" => $items_per_page, 
         "page" => $page
     ]);
+
 } catch (PDOException $e) {
     echo json_encode(["res" => "error", "message" => $e->getMessage()]);
 }

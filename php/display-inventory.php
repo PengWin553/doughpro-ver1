@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+header('Content-Type: application/json');
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $limit = isset($_GET['items_per_page']) ? intval($_GET['items_per_page']) : 8;

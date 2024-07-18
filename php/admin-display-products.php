@@ -44,6 +44,8 @@ try {
         'total' => $total_records
     ];
 
+    header('Content-Type: application/json');
+
     echo json_encode($response);
 } catch (PDOException $e) {
     echo json_encode(['res' => 'error', 'message' => $e->getMessage()]);
