@@ -103,7 +103,7 @@ $user_id = $_SESSION["user_id"];
         <!-- Search and Filter Section -->
         <div class="search-filter-container">
             <!-- search -->
-            <div class="InputContainer search-input-container">
+            <div class="InputContainer search-input-container search-stock-style">
                 <input type="text" class="input" id="searchStockOutName" placeholder="Search by name" />
                 
                 <label for="input" class="labelforsearch">
