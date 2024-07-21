@@ -1,0 +1,4 @@
+1. Copy, paste, and run the latest doughpro.sql's queries
+
+2. Copy, paste and run the if_an_error.sql query.
+
