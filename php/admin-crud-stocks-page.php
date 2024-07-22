@@ -204,6 +204,7 @@ $user_id = $_SESSION["user_id"];
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sidebar.js"></script>
+    <script src="../js/sidebar-highlight.js"></script>
     <script src="../js/display-stocks.js"></script>
     <script src="../js/display-inv-in-modal.js"></script>
     <script src="../js/add-stock.js"></script>

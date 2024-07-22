@@ -318,3 +318,18 @@ body.dark .home .text{
 .menu-links ol, ul {
     padding: 0 !important;
 }
+
+/* sidebar highlights */
+.sidebar li a.active {
+    background-color: var(--primary-color);
+}
+
+.sidebar li a.active .icon,
+.sidebar li a.active .text {
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a.active .icon,
+body.dark .sidebar li a.active .text {
+    color: var(--text-color);
+}

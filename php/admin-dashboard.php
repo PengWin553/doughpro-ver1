@@ -34,5 +34,6 @@ $user_id = $_SESSION["user_id"];
     </section>
 
     <script src="../js/sidebar.js"></script>
+    <script src="../js/sidebar-highlight.js"></script>
 </body>
 </html>
