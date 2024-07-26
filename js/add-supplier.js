@@ -3,6 +3,9 @@ $('#btn-add_supplier').click(function(event) {
 
     // get the values from the form
     var supplierName = $("#add_supplier").val();
+    var supplierEmail = $("#add_supplier_email").val();
+    var supplierContactNumber = $("#add_supplier_contact_number").val();
+    var supplierAddress = $("#add_supplier_address").val();
     var supply = $("#add_supply").val();
 
     if (supplierName.trim().length > 0) {
@@ -13,6 +16,9 @@ $('#btn-add_supplier').click(function(event) {
             },
             body: new URLSearchParams({
                 supplier_name: supplierName,
+                supplier_email: supplierEmail,
+                supplier_contact_number: supplierContactNumber,
+                supplier_address: supplierAddress,
                 supply: supply,
             }),
         })

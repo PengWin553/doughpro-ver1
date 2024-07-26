@@ -17,6 +17,9 @@ function loadData(page = 1, searchQuery = '') {
                         <tr>
                             <td>${item.supplier_id}</td>
                             <td>${item.supplier_name}</td>
+                            <td>${item.email}</td>
+                            <td>${item.contact_number}</td>
+                            <td>${item.address}</td>
                             <td>${item.supply}</td>
                             <td class="actions-buttons-container">
                                 <button class="btn-update btn-update-delete btn-update-supplier" id="${item.supplier_id}" data-supplier-name="${item.supplier_name}" data-supply="${item.supply}">Edit</button>

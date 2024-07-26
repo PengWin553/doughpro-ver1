@@ -53,9 +53,30 @@ $user_id = $_SESSION["user_id"];
                         <form class="form_container_inp" style="width: 100%; padding: 0;" id="newSupplierForm">
                             <!-- suppliername -->
                             <div class="input_container_inp">
-                                <label class="input_label_inp" for="supplierName_field">Supplier Name</label>
+                                <label class="input_label_inp" for="supplierName_field">Name</label>
                                 <i class='bx bx-group icon icon_inp modal-form-icons' ></i>
                                 <input placeholder="supplier name" title="Inpit title" name="add_supplier" type="text" class="input_field_inp" id="add_supplier" autocomplete="off">
+                            </div>
+
+                            <!-- supplieremail -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="supplierEmail_field">Email</label>
+                                <i class='bx bx-group icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="supplier's email" title="Inpit title" name="add_supplier_email" type="email" class="input_field_inp" id="add_supplier_email" autocomplete="off">
+                            </div>
+
+                            <!-- suppliercontactnumber -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="supplierContactNumber_field">Contact Number</label>
+                                <i class='bx bx-group icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="supplier's contact number" title="Inpit title" name="add_supplier_contact_number" type="number" class="input_field_inp" id="add_supplier_contact_number" autocomplete="off">
+                            </div>
+
+                            <!-- supplieraddress -->
+                            <div class="input_container_inp">
+                                <label class="input_label_inp" for="supplierAddress_field">Address</label>
+                                <i class='bx bx-group icon icon_inp modal-form-icons' ></i>
+                                <input placeholder="supplier's address" title="Inpit title" name="add_supplier_address" type="text" class="input_field_inp" id="add_supplier_address" autocomplete="off">
                             </div>
 
                             <!-- supply -->
@@ -146,6 +167,9 @@ $user_id = $_SESSION["user_id"];
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                            <th>Address</th>
                             <th>Supply</th>
                             <th style="text-align: center;">Actions</th>
                         </tr>

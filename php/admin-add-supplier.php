@@ -4,6 +4,9 @@ include('connection.php');
 // Check if the form data is set
 if (isset($_POST['supplier_name'])) {
     $supplierName = $_POST['supplier_name'];
+    $supplierEmail = $_POST['supplier_email'];
+    $supplierContactNumber = $_POST['supplier_contact_number'];
+    $supplierAddress = $_POST['supplier_address'];
     $supply = $_POST['supply'];
 
     try {
@@ -17,8 +20,11 @@ if (isset($_POST['supplier_name'])) {
             echo json_encode(['res' => 'exists', 'msg' => 'Supplier name already exists.']);
         } else {
             // Insert the new supplier into the database
-            $stmt = $connection->prepare("INSERT INTO suppliers_table (supplier_name, supply, created_at, updated_at) VALUES (:supplier_name, :supply, NOW(), NOW())");
+            $stmt = $connection->prepare("INSERT INTO suppliers_table (supplier_name, email, contact_number, address, supply, created_at, updated_at) VALUES (:supplier_name, :email, :contact_number, :address, :supply, NOW(), NOW())");
             $stmt->bindParam(':supplier_name', $supplierName);
+            $stmt->bindParam(':email', $supplierEmail);
+            $stmt->bindParam(':contact_number', $supplierContactNumber);
+            $stmt->bindParam(':address', $supplierAddress);
             $stmt->bindParam(':supply', $supply);
             $stmt->execute();
             echo json_encode(['res' => 'success']);

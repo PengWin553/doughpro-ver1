@@ -223,6 +223,9 @@ DELIMITER ;
 CREATE TABLE `suppliers_table` (
   `supplier_id` int(11) NOT NULL,
   `supplier_name` varchar(255) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `contact_number` int(20) NOT NULL,
+  `address` varchar(200) NOT NULL,
   `supply` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()

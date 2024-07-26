@@ -7,7 +7,7 @@ header('Cache-Control: no-cache');
 
 // Function to fetch the latest suppliers from the database with pagination and search
 function fetchSuppliers($connection, $offset, $limit, $search = '') {
-    $query = "SELECT supplier_id, supplier_name, supply FROM suppliers_table ";
+    $query = "SELECT supplier_id, supplier_name, email, contact_number, address, supply FROM suppliers_table ";
     if ($search !== '') {
         $query .= "WHERE supplier_name LIKE :search ";
     }
