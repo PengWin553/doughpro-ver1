@@ -37,7 +37,7 @@ $user_id = $_SESSION["user_id"];
 
     <section class="home">
         <div class="page-title-container">
-            <div class="page-title-text"> <i class='bx bx-category-alt icon page-title-icon'></i> <span>To Order</span> </div>
+            <div class="page-title-text"> <i class='bx bxs-shopping-bag icon page-title-icon'></i> <span>To Order</span> </div>
         </div>
 
         <!-- Search input field -->

@@ -69,7 +69,7 @@
                 </li>
 
                 <li class="nav-link" title="Recipes">
-                    <a href="#">
+                    <a href="admin-crud-recipes-page.php">
                         <i class='bx bx-fork icon'></i>
                         <span class="text nav-text">Recipes</span>
                     </a>
