@@ -39,7 +39,7 @@ function loadData(page = 1) {
                             <td>${item.category_name}</td>
                             <td>${item.inventory_description}</td>
                             <td>${item.unit}</td>
-                            <td>${item.inventory_price}</td>
+                            <td>₱${item.inventory_price}</td>
                             <td>${item.current_stock}</td>
                             <td>${item.min_stock_level}</td>
                             <td class="actions-buttons-container">

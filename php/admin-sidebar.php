@@ -62,7 +62,7 @@
                 </li>
 
                 <li class="nav-link" title="To Order">
-                    <a href="#">
+                    <a href="to-order-list-page.php">
                         <i class='bx bxs-shopping-bag icon'></i>
                         <span class="text nav-text">To Order</span>
                     </a>
@@ -83,7 +83,7 @@
                 </li>
 
                 <li class="nav-link" title="Logs">
-                    <a href="#">
+                    <a href="audit-trails-page.php">
                         <i class='bx bx-pie-chart-alt icon'></i>
                         <span class="text nav-text">Logs</span>
                     </a>

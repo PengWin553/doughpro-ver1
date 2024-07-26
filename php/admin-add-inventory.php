@@ -8,7 +8,7 @@ if (isset($_POST['inventory_name'])) {
     $invDescription = $_POST['inventory_description'];
     $invPrice = $_POST['inventory_price'];
     $invStock = $_POST['inventory_stock'];
-    $invUnit = strtoupper($_POST['inventory_unit']);
+    $invUnit = ucfirst($_POST['inventory_unit']);
 
     try {
         // Check for duplicate inventory item

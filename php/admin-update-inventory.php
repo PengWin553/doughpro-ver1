@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $invDes = $_POST['inventory_description'];
     $invPrice = $_POST['inventory_price'];
     $invMinStock = $_POST['inventory_min_stock_level'];
-    $invUnit = strtoupper($_POST['inventory_unit']); 
+    $invUnit = ucfirst($_POST['inventory_unit']); 
 
     try {
         // Prepare the UPDATE query to update the user information in the database
