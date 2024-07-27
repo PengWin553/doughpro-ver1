@@ -3,7 +3,7 @@ include('connection.php');
 
 // Check if the form data is set
 if (isset($_POST['stock_name'])) {
-    $inventoryId = $_POST['stock_name'];  // It's actually inventory ID
+    $inventoryId = ucfirst($_POST['stock_name']);  // It's actually inventory ID
     $quantity = $_POST['stock_quantity'];
     $expiry = $_POST['stock_expiry'];
 

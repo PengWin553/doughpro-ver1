@@ -3,11 +3,11 @@ include('connection.php');
 
 // Check if the form data is set
 if (isset($_POST['supplier_name'])) {
-    $supplierName = $_POST['supplier_name'];
-    $supplierEmail = $_POST['supplier_email'];
+    $supplierName = ucfirst($_POST['supplier_name']);
+    $supplierEmail = strtolower($_POST['supplier_email']);
     $supplierContactNumber = $_POST['supplier_contact_number'];
-    $supplierAddress = $_POST['supplier_address'];
-    $supply = $_POST['supply'];
+    $supplierAddress = ucwords($_POST['supplier_address']);
+    $supply = ucwords($_POST['supply']);
 
     try {
         // Check if supplier name already exists

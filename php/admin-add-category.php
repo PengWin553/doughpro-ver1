@@ -3,7 +3,7 @@ include('connection.php');
 
 // Check if the form data is set
 if (isset($_POST['category_name'])) {
-    $categoryName = $_POST['category_name'];
+    $categoryName = ucfirst($_POST['category_name']);
 
     try {
         // Check if category name already exists
