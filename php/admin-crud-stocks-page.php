@@ -61,7 +61,7 @@ $user_id = $_SESSION["user_id"];
                                 <label class="input_label_inp" for="Stockname_field">Item Name</label>
                                 <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
                                 <select name="add_stock_name" id="add_stock_name" class="input_field_inp">
-                                    <option value="">select item</option>
+                                    <option value="">Select item</option>
                                 </select>
                             </div>
 
@@ -69,14 +69,14 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="set_quantity">Quantity</label>
                                 <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter quantity" title="Inpit title" name="set_quantity" type="number" class="input_field_inp" id="set_quantity" autocomplete="off">
+                                <input placeholder="Enter quantity" title="Inpit title" name="set_quantity" type="number" class="input_field_inp" id="set_quantity" autocomplete="off">
                             </div>
 
                             <!-- expiry date -->
                             <div class="input_container_inp">
                             <label class="input_label_inp" for="set_expiry_date">Expiry Date</label>
                                 <i class='bx bxs-hourglass-bottom icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter expiry date" title="Inpit title" name="set_expiry_date" type="date" class="input_field_inp" id="set_expiry_date" autocomplete="off">
+                                <input placeholder="Enter expiry date" title="Inpit title" name="set_expiry_date" type="date" class="input_field_inp" id="set_expiry_date" autocomplete="off">
                             </div>
                             
                         </form>
@@ -115,14 +115,14 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="update_quantity">Quantity</label>
                                 <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons'></i>
-                                <input placeholder="enter quantity" title="Input title" name="update_quantity" type="number" class="input_field_inp" id="update_quantity" autocomplete="off">
+                                <input placeholder="Enter quantity" title="Input title" name="update_quantity" type="number" class="input_field_inp" id="update_quantity" autocomplete="off">
                             </div>
 
                             <!-- expiry date -->
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="update_expiry_date">Expiry Date</label>
                                 <i class='bx bxs-hourglass-bottom icon icon_inp modal-form-icons'></i>
-                                <input placeholder="enter expiry date" title="Input title" name="update_expiry_date" type="date" class="input_field_inp" id="update_expiry_date" autocomplete="off">
+                                <input placeholder="Enter expiry date" title="Input title" name="update_expiry_date" type="date" class="input_field_inp" id="update_expiry_date" autocomplete="off">
                             </div>
                         </form>
                     </div>

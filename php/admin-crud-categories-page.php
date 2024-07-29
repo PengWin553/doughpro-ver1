@@ -66,7 +66,7 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="categoryName_field">Category Name</label>
                                 <i class='bx bx-category-alt icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="category name" title="Inpit title" name="add_category" type="text" class="input_field_inp" id="add_category" autocomplete="off">
+                                <input placeholder="Category name" title="Inpit title" name="add_category" type="text" class="input_field_inp" id="add_category" autocomplete="off">
                             </div>
                         </form>
                     </div>
@@ -95,7 +95,7 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="updateCategoryName_field">Category Name</label>
                                 <i class='bx bx-category-alt icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="category name" title="Update Category" name="update_category" type="text" class="input_field_inp" id="update_category" autocomplete="off">
+                                <input placeholder="Category name" title="Update Category" name="update_category" type="text" class="input_field_inp" id="update_category" autocomplete="off">
                             </div>
                         </form>
                     </div>

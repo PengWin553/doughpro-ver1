@@ -59,7 +59,7 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="useQuantity">Quantity Used</label>
                                 <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons'></i>
-                                <input placeholder="enter quantity" title="Input title" name="update_quantity" type="number" class="input_field_inp" id="useQuantity" autocomplete="off">
+                                <input placeholder="Enter quantity" title="Input title" name="update_quantity" type="number" class="input_field_inp" id="useQuantity" autocomplete="off">
                             </div>
                         </form>
                     </div>
@@ -86,7 +86,7 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="discardQuantity">Quantity to Discard</label>
                                 <i class='bx bxs-circle-three-quarter icon icon_inp modal-form-icons'></i>
-                                <input placeholder="enter quantity" title="Input title" name="discard_quantity" type="number" class="input_field_inp" id="discardQuantity" autocomplete="off" readonly>
+                                <input placeholder="Enter quantity" title="Input title" name="discard_quantity" type="number" class="input_field_inp" id="discardQuantity" autocomplete="off" readonly>
                             </div>
                         </form>
                     </div>

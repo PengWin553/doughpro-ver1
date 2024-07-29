@@ -55,7 +55,7 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="Inventoryname_field">Item Name</label>
                                 <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter item name" title="Inpit title" name="add_inventory_name" type="text" class="input_field_inp" id="add_inventory_name" autocomplete="off">
+                                <input placeholder="Enter item name" title="Inpit title" name="add_inventory_name" type="text" class="input_field_inp" id="add_inventory_name" autocomplete="off">
                             </div>
 
                             <!-- category -->
@@ -63,7 +63,7 @@ $user_id = $_SESSION["user_id"];
                                 <label class="input_label_inp" for="category_select">Category</label>
                                 <i class='bx bx-category icon icon_inp modal-form-icons'></i>
                                 <select name="category_select" id="add_category" class="input_field_inp">
-                                    <option value="" selected disabled>select category</option>
+                                    <option value="" selected disabled>Select category</option>
                                     <!-- Options will be populated by JavaScript -->
                                 </select>
                             </div>
@@ -72,28 +72,28 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="inventory_description_field">Description</label>
                                 <i class='bx bx-info-circle icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter description" title="Inpit title" name="add_inventory_description" type="text" class="input_field_inp" id="add_inventory_description" autocomplete="off">
+                                <input placeholder="Enter description" title="Inpit title" name="add_inventory_description" type="text" class="input_field_inp" id="add_inventory_description" autocomplete="off">
                             </div>
 
                             <!-- price -->
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="inventory_price_field">Price</label>
                                 <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter price" title="Inpit title" name="add_inventory_price" type="number" class="input_field_inp" id="add_inventory_price" autocomplete="off">
+                                <input placeholder="Enter price" title="Inpit title" name="add_inventory_price" type="number" class="input_field_inp" id="add_inventory_price" autocomplete="off">
                             </div>
 
                            <!-- min stock level -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
                                 <label class="input_label_inp" for="min_stock_level_field">Mininum Stock</label>
-                                <input placeholder="enter mininum stock value" title="Input title" name="add_min_stock_level" type="text" class="input_field_inp" id="add_min_stock_level" autocomplete="off">
+                                <input placeholder="Enter mininum stock value" title="Input title" name="add_min_stock_level" type="text" class="input_field_inp" id="add_min_stock_level" autocomplete="off">
                             </div>
 
                             <!-- unit -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
                                 <label class="input_label_inp" for="min_stock_level_field">Unit</label>
-                                <input placeholder="enter unit" title="Input title" name="add_inventory_unit" type="text" class="input_field_inp" id="add_inventory_unit" autocomplete="off">
+                                <input placeholder="Enter unit" title="Input title" name="add_inventory_unit" type="text" class="input_field_inp" id="add_inventory_unit" autocomplete="off">
                             </div>
                             
                         </form>
@@ -123,7 +123,7 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="update_inventory_name">Item Name</label>
                                 <i class='bx bx-tag-alt icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter item name" title="Inpit title" name="update_inventory_name" type="text" class="input_field_inp" id="update_inventory_name" autocomplete="off">
+                                <input placeholder="Enter item name" title="Inpit title" name="update_inventory_name" type="text" class="input_field_inp" id="update_inventory_name" autocomplete="off">
                             </div>
 
                             <!-- category -->
@@ -131,7 +131,7 @@ $user_id = $_SESSION["user_id"];
                                 <label class="input_label_inp" for="update_inventory_category">Category</label>
                                 <i class='bx bx-category icon icon_inp modal-form-icons'></i>
                                 <select name="update_inventory_category" id="update_inventory_category" class="input_field_inp">
-                                    <option value="" selected disabled>select category</option>
+                                    <option value="" selected disabled>Select category</option>
                                     <!-- Options will be populated by JavaScript -->
                                 </select>
                             </div>
@@ -140,28 +140,28 @@ $user_id = $_SESSION["user_id"];
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="update_inventory_description">Description</label>
                                 <i class='bx bx-info-circle icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter description" title="Inpit title" name="update_inventory_description" type="text" class="input_field_inp" id="update_inventory_description" autocomplete="off">
+                                <input placeholder="Enter description" title="Inpit title" name="update_inventory_description" type="text" class="input_field_inp" id="update_inventory_description" autocomplete="off">
                             </div>
 
                             <!-- unit -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
                                 <label class="input_label_inp" for="update_unit">Unit</label>
-                                <input placeholder="enter new unit" title="Input title" name="update_unit" type="text" class="input_field_inp" id="update_unit" autocomplete="off">
+                                <input placeholder="Enter new unit" title="Input title" name="update_unit" type="text" class="input_field_inp" id="update_unit" autocomplete="off">
                             </div>
 
                             <!-- price -->
                             <div class="input_container_inp">
                                 <label class="input_label_inp" for="update_inventory_price">Price</label>
                                 <i class='bx bx-purchase-tag icon icon_inp modal-form-icons' ></i>
-                                <input placeholder="enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
+                                <input placeholder="Enter price" title="Inpit title" name="update_inventory_price" type="number" class="input_field_inp" id="update_inventory_price" autocomplete="off">
                             </div>
 
                            <!-- min stock level -->
                             <div class="input_container_inp">
                                 <i class='bx bx-down-arrow-alt icon_inp modal-form-icons' ></i>
                                 <label class="input_label_inp" for="update_min_stock_level">Mininum Stock</label>
-                                <input placeholder="enter mininum stock value" title="Input title" name="update_min_stock_level" type="text" class="input_field_inp" id="update_min_stock_level" autocomplete="off">
+                                <input placeholder="Enter mininum stock value" title="Input title" name="update_min_stock_level" type="text" class="input_field_inp" id="update_min_stock_level" autocomplete="off">
                             </div>
                             
                         </form>
