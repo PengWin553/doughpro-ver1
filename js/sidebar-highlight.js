@@ -26,5 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (link) {
             link.classList.add('active');
         }
+    } else {
+        // If no active link is stored, set admin-dashboard.php as active
+        const defaultLink = document.querySelector('a[href="admin-dashboard.php"]');
+        if (defaultLink) {
+            defaultLink.classList.add('active');
+            localStorage.setItem('activeLink', 'admin-dashboard.php');
+        }
     }
 });

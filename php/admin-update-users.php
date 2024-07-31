@@ -4,9 +4,9 @@
     // Check if the request method is POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userId = $_POST['user_id'];
-        $userName = $_POST['user_name'];
+        $userName = ucwords($_POST['user_name']);
         $userRole = $_POST['user_role'];
-        $userEmail = $_POST['user_email'];
+        $userEmail = strtolower($_POST['user_email']);
         try {
             // Prepare the UPDATE query to update the user information in the database
             $query = "UPDATE users_table SET user_role = :role, user_name = :name, user_email = :email WHERE user_id = :id";

@@ -3,9 +3,9 @@
 
     // Check if the form data is set
     if (isset($_POST['user_name']) && isset($_POST['user_role']) && isset($_POST['user_email'])) {
-        $user_name = $_POST['user_name'];
+        $user_name = ucwords($_POST['user_name']);
         $user_role = $_POST['user_role'];
-        $user_email = $_POST['user_email'];
+        $user_email = strtolower($_POST['user_email']);
 
         try {
             // Check if the user already exists

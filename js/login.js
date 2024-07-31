@@ -24,6 +24,9 @@ document.getElementById('btn-login').addEventListener('click', async function(ev
                 console.log('Successfully logged in.');
                 const userRole = result.user_role; // Store user role in a variable
 
+                // Clear the stored active link
+                localStorage.removeItem('activeLink');
+
                 // Redirect based on user role
                 if (userRole === "Admin") {
                     window.location.href = 'php/admin-dashboard.php'; // Redirect to admin dashboard
